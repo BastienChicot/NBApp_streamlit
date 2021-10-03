@@ -15,7 +15,6 @@ from Services.predictions_joueur import calcul_predictions
 from Services.pred_match import simul_game,create_df
 
 df=pd.read_csv("data/data_ML.csv", sep=";")
-players_base = pd.read_csv('data/nba_players.csv', sep=";")
 
 proj_game=pd.read_csv("data/Base_simu.csv",sep=";")
 
@@ -27,10 +26,14 @@ equipe_simulation=np.unique(proj_game['Tm'])
 mois =[i for i in range(1,13)]
 
 def onglet_stat():
-    a=st.text_input("Sélectionner un joueur", autocomplete="none")
-    tm_option=st.selectbox('Player team',liste_team)
-    opp_option=st.selectbox('Opponent team',liste_team)
-    button_stats = st.button("Afficher les stats du joueur")
+    
+    st.title("Etudier les statistiques d'un joueur")
+    col1, col2 = st.columns(2)
+    a=col1.text_input("Sélectionner un joueur", autocomplete="none")
+    tm_option=col1.selectbox('Player team',liste_team)
+    opp_option=col1.selectbox('Opponent team',liste_team)
+    button_stats = col1.button("Afficher les stats du joueur")
+    col2.text("Liste des joueurs en activité."+"\n"+"Retrouver la bonne orthographe"+"\n"+"si votre requête ne fonctionne pas." )
     
     def affich_stats(a,opp_option,tm_option):
         try:
@@ -43,69 +46,86 @@ def onglet_stat():
             df2=df2.rename(columns={0:"mesure"})
             graph=alt.Chart(df2).transform_calculate().mark_line().encode(
                 x="year",y=alt.Y("mesure",title="Mesures"),color="level_1")
-            st.altair_chart(graph, use_container_width=True)
             last_twenty,splits = stat_20matchs_splits(str(a))
             against = stat_Opp_team(a,opp_option)
             team_rank=stat_teams(tm_option,opp_option)
-            st.dataframe(name)
+            col2.dataframe(name)
+            st.header("Statistiques cumulées au cours de la carrière")
+            st.text("DEF = contres + interception \nMIS = fautes + balles perdues" + "\n" + 
+                    "MP = minutes \nPRP = points + rebonds + passes décisives")
+            st.altair_chart(graph, use_container_width=True)
+            st.header("Statistiques lors des 20 derniers matchs")
             st.dataframe(last_twenty)
+            st.header("Statistiques splits")
             st.dataframe(splits)
+            st.header("Statistiques contre "+opp_option)
+            st.text("Les différences sont calculées par rapport à la moyenne sur la saison au cours de \nlaquelle s'est déroulé le match")
             st.dataframe(against)
+            st.header("Rankings des deux équipes")
             st.dataframe(team_rank)
         except:
             pass
     if button_stats :
         affich_stats(a,opp_option,tm_option)
     else:
-        st.dataframe(name)
+        col2.dataframe(name)
         
 def onglet_prediction():
-    st.dataframe(name)
-    a=st.text_input("Selectionner un joueur", autocomplete="none")
-    b=st.text_input("Selectionner un l'adversaire direct", autocomplete="none")
-    opp_option=st.selectbox("Equipe adverse",liste_team)
-    starter=st.selectbox("Titulaire",(0,1))
-    home=st.selectbox("Domicile",(0,1))
-    month=st.selectbox("Mois",mois)
-    m=st.text_input("Minutes", autocomplete="on")
-    button_pred=st.button("Lancer la prediction")
+    
+    st.title("Projections individuelles")
+    col1, col2 = st.columns(2)
+    col2.text("Liste des joueurs en activité."+"\n"+"Retrouver la bonne orthographe"+"\n"+"si votre requête ne fonctionne pas." )
+    col2.dataframe(name)
+    a=col1.text_input("Selectionner un joueur", autocomplete="none")
+    b=col1.text_input("Selectionner un l'adversaire direct", autocomplete="none")
+    opp_option=col1.selectbox("Equipe adverse",liste_team)
+    starter=col1.selectbox("Titulaire",(0,1))
+    home=col1.selectbox("Domicile",(0,1))
+    month=col1.selectbox("Mois",mois)
+    m=col1.text_input("Minutes", autocomplete="on")
+    button_pred=col1.button("Lancer la prediction")
     
     if button_pred:
         predp,predp_2,predf,preda,predr=calcul_predictions(a,opp_option,b,starter,home,month,m)
-        st.text("Points marqués avec le modèle 1")
-        st.text(predp)
-        st.text("Points marqués avec le modèle 2")
-        st.text(predp_2)
-        st.text("Tirs tentés")
-        st.text(predf)
-        st.text("Passes décisives")
-        st.text(preda)
-        st.text("Rebonds")
-        st.text(predr)
+        st.text("Points marqués avec le modèle 1 : " + "  " +predp)
+        st.empty()
+        st.text("Points marqués avec le modèle 2 : " + "  " +predp_2)
+        st.empty()
+        st.text("Tirs tentés : " + "                      " + predf)
+        st.empty()
+        st.text("Passes décisives : " + "                 " +preda )
+        st.empty()
+        st.text("Rebonds : " + "                          " +predr)
     
 def onglet_simu():
-    tm_dom=st.selectbox("Equipe domicile",equipe_simulation)
-    tm_road=st.selectbox("Equipe visiteurs",equipe_simulation)
-    month=st.selectbox("Mois",mois)
-    check_roster=st.checkbox("Afficher les effectifs et sélectionner les absents")
+    st.title("Simuler un match")
+    st.empty()
+    col1, col2, col3 = st.columns(3)
+    tm_dom=col1.selectbox("Equipe domicile",equipe_simulation)
+    tm_road=col2.selectbox("Equipe visiteurs",equipe_simulation)
+    month=col3.selectbox("Mois",mois)
+    check_roster=st.checkbox("Afficher les effectifs, sélectionner les absents et choisir le nombre de simulations" + "\n" +
+                             "(Obligatoire pour pouvoir lancer la simulation)")
 
     if check_roster:
         df_team=proj_game.loc[proj_game['Tm']==tm_dom]
         df_opp=proj_game.loc[proj_game['Tm']==tm_road]
         home_player=np.unique(df_team['full_name'])
         road_player=np.unique(df_opp['full_name'])
-        home_select = st.multiselect('Cliquer sur les joueurs absents à domicile', home_player) 
-        road_select = st.multiselect('Cliquer sur les joueurs visiteurs absents', road_player)
-        slide = st.slider("Nombre de simulations",min_value=10,max_value=500,step=1)
+        home_select = col1.multiselect('Cliquer sur les joueurs absents à domicile', home_player) 
+        road_select = col2.multiselect('Cliquer sur les joueurs visiteurs absents', road_player)
+        slide = col3.slider("Nombre de simulations",min_value=10,max_value=500,step=1)
         
     if st.button("Lancer la prédiction"):
         my_bar = st.progress(0)
+
         mask_home = ~df_team['full_name'].isin(home_select)
         mask_road = ~df_opp['full_name'].isin(road_select)
-        equipe=str(tm_dom)
-        Opp=str(tm_road)
         df_team = df_team[mask_home]
         df_opp = df_opp[mask_road]
+
+        equipe=str(tm_dom)
+        Opp=str(tm_road)
         df_team['Opp']=Opp
         df_opp['Opp']=equipe
         df_team=create_df(df_team,month)
