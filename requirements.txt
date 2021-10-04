@@ -5,9 +5,3 @@ pandas
 numpy
 joblib
 requests
-sklearn.pipeline
-sklearn.preprocessing
-sklearn.feature_selection  
-sklearn.compose 
-sklearn.neural_network 
-sklearn.linear_model 
