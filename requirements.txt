@@ -5,9 +5,6 @@ pandas
 numpy
 joblib
 requests
-Services.stats_joueurs
-Services.predictions_joueur
-Services.pred_match
 sklearn.pipeline
 sklearn.preprocessing
 sklearn.feature_selection  
