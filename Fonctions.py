@@ -49,7 +49,7 @@ def onglet_stat():
                 x="year",y=alt.Y("mesure",title="Mesures"),color="level_1")
             url = stat_20matchs_splits(str(a))
             against = stat_Opp_team(str(a),str(opp_option))
-            team_rank=stat_teams(str(tm_option),str(opp_option))
+            #team_rank=stat_teams(str(tm_option),str(opp_option))
             col2.dataframe(name)
             st.header("Statistiques cumulées au cours de la carrière")
             st.text("DEF = contres + interception \nMIS = fautes + balles perdues" + "\n" + 
