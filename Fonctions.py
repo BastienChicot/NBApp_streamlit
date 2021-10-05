@@ -54,7 +54,7 @@ def onglet_stat():
             st.header("Statistiques cumulées au cours de la carrière")
             st.text("DEF = contres + interception \nMIS = fautes + balles perdues" + "\n" + 
                     "MP = minutes \nPRP = points + rebonds + passes décisives")
-            #st.altair_chart(graph, use_container_width=True)
+            st.altair_chart(graph, use_container_width=True)
             st.header("Statistiques lors des 20 derniers matchs")
             #st.dataframe(last_twenty)
             st.header("Statistiques splits")
