@@ -73,7 +73,7 @@ def stat_20matchs_splits(full_name):
                                                                              'Pacific'])] 
     df_splits_career.reset_index(level=0, inplace=True)
 
-    return(tab_data2,df_splits_career)
+    return(url)
 
 def stat_Opp_team(full_name,Opp):
 
