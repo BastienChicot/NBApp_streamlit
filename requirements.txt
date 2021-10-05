@@ -3,9 +3,3 @@ bs4
 sklearn
 joblib
 requests
-import pandas as pd
-import numpy as np
-import altair as alt
-import streamlit as st
-from joblib import load
-from bs4 import BeautifulSoup
