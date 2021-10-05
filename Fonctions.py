@@ -47,23 +47,23 @@ def onglet_stat():
             df2=df2.rename(columns={0:"mesure"})
             graph=alt.Chart(df2).transform_calculate().mark_line().encode(
                 x="year",y=alt.Y("mesure",title="Mesures"),color="level_1")
-            url = stat_20matchs_splits(str(a))
+            last20,splits = stat_20matchs_splits(str(a))
             against = stat_Opp_team(str(a),str(opp_option))
-            #team_rank=stat_teams(str(tm_option),str(opp_option))
+            team_rank=stat_teams(str(tm_option),str(opp_option))
             col2.dataframe(name)
             st.header("Statistiques cumulées au cours de la carrière")
             st.text("DEF = contres + interception \nMIS = fautes + balles perdues" + "\n" + 
                     "MP = minutes \nPRP = points + rebonds + passes décisives")
             st.altair_chart(graph, use_container_width=True)
             st.header("Statistiques lors des 20 derniers matchs")
-            st.text(url)
+            st.dataframe(last20)
             st.header("Statistiques splits")
-            #st.dataframe(splits)
+            st.dataframe(splits)
             st.header("Statistiques contre "+opp_option)
             st.text("Les différences sont calculées par rapport à la moyenne sur la saison au cours de \nlaquelle s'est déroulé le match")
             st.dataframe(against)
             st.header("Rankings des deux équipes")
-            #st.dataframe(team_rank)
+            st.dataframe(team_rank)
         except:
             pass
     if button_stats :
