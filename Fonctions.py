@@ -36,7 +36,7 @@ def onglet_stat():
     button_stats = col1.button("Afficher les stats du joueur")
     col2.text("Liste des joueurs en activité."+"\n"+"Retrouver la bonne orthographe"+"\n"+"si votre requête ne fonctionne pas." )
     
-    def affich_stats(a,str(opp_option),str(tm_option)):
+    def affich_stats(a,opp_option,tm_option):
         try:
             df1=evo.loc[evo["full_name"]==str(a)]
             df1=df1[["year","PRP","DEF","MIS","MP"]]
@@ -67,7 +67,7 @@ def onglet_stat():
         except:
             pass
     if button_stats :
-        affich_stats(a,opp_option,tm_option)
+        affich_stats(a,str(opp_option),str(tm_option))
     else:
         col2.dataframe(name)
         
