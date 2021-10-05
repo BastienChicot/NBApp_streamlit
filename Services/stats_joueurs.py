@@ -25,9 +25,9 @@ def stat_20matchs_splits(full_name):
     try :
         r = requests.get(url)
         r_html = r.text
-    #    soup = BeautifulSoup(r_html,'html.parser')
-    #    table=soup.find_all('table', {'id' : 'pgl_basic'})
-    #    tab_data = pd.read_html(str(table[0]))[0]
+        soup = BeautifulSoup(r_html,'html.parser')
+        table=soup.find_all('table', {'id' : 'pgl_basic'})
+        tab_data = pd.read_html(str(table[0]))[0]
                 
     #    tab_data['url'] = url
     #    tab_data['joueur'] = code
