@@ -22,9 +22,9 @@ def stat_20matchs_splits(full_name):
     #Stat 15 derniers matchs
     url = 'https://www.basketball-reference.com/players/a/'+str(code)+'/gamelog/'+str(annee)
     
-    #try :
-    #    r = requests.get(url)
-    #    r_html = r.text
+    try :
+        r = requests.get(url)
+        r_html = r.text
     #    soup = BeautifulSoup(r_html,'html.parser')
     #    table=soup.find_all('table', {'id' : 'pgl_basic'})
     #    tab_data = pd.read_html(str(table[0]))[0]
@@ -33,8 +33,8 @@ def stat_20matchs_splits(full_name):
     #    tab_data['joueur'] = code
     #    tab_data['annee'] = annee
             
-    #except IndexError:        
-    #    gotdata = 'null'
+    except IndexError:        
+        gotdata = 'null'
             
     #if annee<"2022" :
     #    indexNames = tab_data[tab_data['Rk'] == 'Rk' ].index
