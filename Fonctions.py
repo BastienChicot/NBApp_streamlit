@@ -46,7 +46,7 @@ def onglet_stat():
             df2=df2.stack().reset_index()
             df2=df2.rename(columns={0:"mesure"})
             #graph=alt.Chart(df2).transform_calculate().mark_line().encode(
-                x="year",y=alt.Y("mesure",title="Mesures"),color="level_1")
+            #    x="year",y=alt.Y("mesure",title="Mesures"),color="level_1")
             #last_twenty,splits = stat_20matchs_splits(str(a))
             against = stat_Opp_team(a,opp_option)
             #team_rank=stat_teams(tm_option,opp_option)
