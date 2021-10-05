@@ -67,10 +67,10 @@ def stat_20matchs_splits(full_name):
            
     #df_splits_career = df_splits_career.groupby(axis = 1, level = 1).sum()
     #df_splits_career = df_splits_career.set_index(['Value'])
-    #df_splits_career = df_splits_career.loc[df_splits_career.index.isin##(['Home','Road','Monday','Tuesday','Wednesday','Thursday','Friday',
+    #df_splits_career = df_splits_career.loc[df_splits_career.index.isin###(['Home','Road','Monday','Tuesday','Wednesday','Thursday','Friday',
                                                                              #'Saturday','Sunday','0 Days','1 Day','2 Days','3+ Days','Eastern',
                                                                              #'Western','Atlantic','Central','Northwest','Southeast','Southwest',
-                                                                             'Pacific'])] 
+#                                                                             'Pacific'])] 
 #    df_splits_career.reset_index(level=0, inplace=True)
 
     return(url)
