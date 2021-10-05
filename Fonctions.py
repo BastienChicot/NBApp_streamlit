@@ -87,7 +87,7 @@ def onglet_prediction():
     button_pred=col1.button("Lancer la prediction")
     
     if button_pred:
-        predp,predp_2,predf,preda,predr=calcul_predictions(a,opp_option,b,starter,home,month,m)
+        predp,predp_2,predf,preda,predr=calcul_prediction(str(a),str(opp_option),str(b),str(starter),str(home),str(month),int(m))
         st.text("Points marqués avec le modèle 1 : " + "  " +predp)
         st.empty()
         st.text("Points marqués avec le modèle 2 : " + "  " +predp_2)
