@@ -1,4 +1,4 @@
-BeautifulSoup
+BeautifulSoup4
 scikit-learn==0.23.2
 sklearn==0.0
 joblib==0.17.0
