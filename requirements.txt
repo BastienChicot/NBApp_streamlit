@@ -1,5 +1,4 @@
-beautifulsoup4==4.9.3
-from bs4 import BeautifulSoup
+BeautifulSoup
 scikit-learn==0.23.2
 sklearn==0.0
 joblib==0.17.0
