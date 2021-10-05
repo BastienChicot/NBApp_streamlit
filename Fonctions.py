@@ -30,7 +30,7 @@ def onglet_stat():
     
     st.title("Etudier les statistiques d'un joueur")
     col1, col2 = st.columns(2)
-    a=col1.selectbox("Sélectionner un joueur", list_name)
+    a=col1.selectbox("Sélectionner un joueur", liste_name)
     tm_option=col1.selectbox('Player team',liste_team)
     opp_option=col1.selectbox('Opponent team',liste_team)
     button_stats = col1.button("Afficher les stats du joueur")
