@@ -14,14 +14,13 @@ from Services.stats_joueurs import  stat_20matchs_splits,stat_Opp_team,stat_team
 from Services.predictions_joueur import calcul_predictions
 from Services.pred_match import simul_game,create_df
 
-df=pd.read_csv("data/data_ML.csv", sep=";")
 proj_game=pd.read_csv("data/Base_simu.csv",sep=";")
 
-liste_team=np.unique(df['Tm'])
-liste_name=np.unique(df['full_name'])
+liste_team=np.unique(proj_game['Tm'])
 evo = pd.read_csv("data/evo_carriere.csv",sep=";")
+liste_name=np.unique(evo['full_name'])
 name=pd.DataFrame(np.unique(evo['full_name']))
-name=name.rename(columns={0:"Joueur"})
+name=name.rename(columns={0:"Joueur"}) 
 equipe_simulation=np.unique(proj_game['Tm'])
 
 mois =[i for i in range(1,13)]
@@ -48,8 +47,11 @@ def onglet_stat():
             graph=alt.Chart(df2).transform_calculate().mark_line().encode(
                 x="year",y=alt.Y("mesure",title="Mesures"),color="level_1")
             last20 = stat_20matchs_splits(str(a))
+            last20=last20.set_index('Date')
             against = stat_Opp_team(str(a),str(opp_option))
+            against=against.set_index("Opp")
             team_rank=stat_teams(str(tm_option),str(opp_option))
+            team_rank=team_rank.set_index("TEAM")
             col2.dataframe(name)
             st.header("Statistiques cumulées au cours de la carrière")
             st.text("DEF = contres + interception \nMIS = fautes + balles perdues" + "\n" + 
