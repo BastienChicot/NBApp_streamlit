@@ -9,7 +9,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 
-def stat_teams (player_team,Opp):
+def stat_teams ():
 
     url4 = "https://www.lineups.com/nba/team-rankings/defense"
     r = requests.get(url4)
@@ -17,7 +17,7 @@ def stat_teams (player_team,Opp):
     soup = BeautifulSoup(r_html,'html.parser')
     table=soup.find_all('table', {'class' : 'multi-row-data-table t-stripped'})
     tab_team = pd.read_html(str(table[0]))[0]
-    tab_team.to_csv("ranking_team.csv",sep=";")
+    tab_team.to_csv("../data/ranking_team.csv",sep=";")
 
 def recup_roster():
 
@@ -61,18 +61,62 @@ def recup_roster():
         
     nettoyage(final)
     
-    final=final[["full_name","Tm"]]
+    url="http://www.espn.com/nba/depth"
+    r = requests.get(url)
+    r_html = r.text
+    soup = BeautifulSoup(r_html,'html.parser')
+    table=soup.find_all('table')
+    tab_data = pd.read_html(str(table[0]))[0]
+    t=tab_data.stack()
     
+    tab = pd.DataFrame(t)
+    tab=tab.rename(columns={0:"full_name"})
+    nettoyage(tab)
+    tab['name'] = tab['name_lower'].str[3:]
+    tab['starter']=1
+    
+    final[['first','name']] = final['name_lower'].str.split(" ",expand=True)
+    
+    tab=tab[["name","starter"]]
+    final = pd.merge(final,tab,on="name",how="outer")
+    
+    final=final.rename(columns={"starter":"GS"})
+    final["GS"].fillna(0, inplace=True)
+    final = final[final['POS'].notna()]
+    final=final[["full_name","Tm","POS","GS"]]
     final.to_csv("roster.csv",sep=";")
-
-#def indice_team(tab_team):
-
-# def maj_roster(full_name,new_team):
-#     df=pd.read_csv("data/data_ML.csv",sep=";")
-#     simu=pd.read_csv("data/Base_simu.csv",sep=";")
-#     df = df.loc[(df['full_name'] == full_name),'Tm']=new_team
-#     simu = simu.loc[(simu['full_name'] == full_name),'Tm']=new_team
-#     df.to_csv("data/data_ML.csv",sep=";")
-#     simu.to_csv("data/Base_simu.csv",sep=";")
     
+def teamstats():
+    years=[2017,2018,2019,2020,2021]
     
+    final=[]
+    for year in years :
+        url="https://www.basketball-reference.com/leagues/NBA_"+str(year)+".html"
+    
+        r = requests.get(url)
+        r_html = r.text
+        soup = BeautifulSoup(r_html,'html.parser')
+        table_adv=soup.find_all('table',{"id":"advanced-team"})
+        tab_data_adv = pd.read_html(str(table_adv[0]),header=1)[0]
+        tab_data_adv["annee"]=str(year)
+        final.append(tab_data_adv)
+    
+    stats=pd.concat(final)
+    stats['Team'] = stats['Team'].str.replace(u"*", "")
+    stats = stats[["Team","annee","DRtg"]]
+    Tm=pd.DataFrame({"Team":['Atlanta Hawks', 'Boston Celtics', 'Brooklyn Nets',
+           'Charlotte Hornets', 'Chicago Bulls', 'Cleveland Cavaliers',
+           'Dallas Mavericks', 'Denver Nuggets', 'Detroit Pistons',
+           'Golden State Warriors', 'Houston Rockets', 'Indiana Pacers',
+           'Los Angeles Clippers', 'Los Angeles Lakers',
+           'Memphis Grizzlies', 'Miami Heat', 'Milwaukee Bucks',
+           'Minnesota Timberwolves', 'New Orleans Pelicans',
+           'New York Knicks', 'Oklahoma City Thunder', 'Orlando Magic',
+           'Philadelphia 76ers', 'Phoenix Suns', 'Portland Trail Blazers',
+           'Sacramento Kings', 'San Antonio Spurs', 'Toronto Raptors',
+           'Utah Jazz', 'Washington Wizards'],"Opp": ["ATL","BOS","BRK","CHO","CHI","CLE","DAL","DEN","DET","GSW","HOU","IND","LAC","LAL",
+                                         "MEM","MIA","MIL","MIN","NOP","NYK","OKC","ORL","PHI","PHO","POR","SAC",
+                                         "SAS","TOR","UTA","WAS"]})
+                                                        
+    stats = stats.merge(Tm, on="Team")
+    stats.to_csv("../data/teamstats.csv",sep=";")

@@ -7,8 +7,8 @@ Created on Wed Oct  6 17:24:05 2021
 import pandas as pd
 import numpy as np
 
-def base_simu(annee):
-    data=pd.read_csv("data/data_ML.csv",sep=";")
+def base_simu_fun(annee):
+    data=pd.read_csv("../data/data_ML.csv",sep=";")
     roster=pd.read_csv("roster.csv",sep=";")
     
     df=data.loc[data["annee"]==annee]
@@ -48,7 +48,7 @@ def base_simu(annee):
     cluster_c=cluster_c.rename(columns={"Opp_Coach":"coach","cluster_coach":"cluster_c"})
     
     coachs=pd.read_csv("coachs.csv",sep=";")
-    coachs=coachs.loc[coachs['annee']==2021]
+    coachs=coachs.loc[coachs['annee']==annee]
     coachs=coachs[["Coach","Tm"]]
     coachs=coachs.rename(columns={"Coach":"coach"})
     
@@ -58,7 +58,7 @@ def base_simu(annee):
     cluster_c=cluster_c.drop_duplicates(['coach'],keep="last")
     
     fini2=fini2.merge(cluster_p,on="full_name",how="left")
-    roster=roster[['full_name','Tm','starter']]
+    roster=roster[['full_name','Tm',"POS"]]
     fini2=fini2.merge(roster,on="full_name",how="left")
     
     def change_tm(df):
@@ -75,8 +75,13 @@ def base_simu(annee):
 
     fini2=fini2.merge(cluster_c,on="Tm",how="left")
     
-    final2=fini2[["full_name","Tm","starter","minutes","cluster_c","cluster_def","age",
-            "FGA","TOV",'PF',"Prod_mean_opp"]]
+    final2=fini2[["full_name","Tm","minutes","cluster_c","cluster_def","age",
+            "FGA","TOV",'PF',"Prod_mean_opp","POS","GS"]]
     
-    final2.to_csv("Base_simu.csv",sep=";")
+    final2["GS"]=final2["GS"].astype(int)
+    
+    final2=final2.rename(columns={"PF":"PF_moy","TOV":"TOV_moy","FGA":"FGA_moy"})
+    final2['code']=final2['POS'].map(str) + final2['Tm'].map(str) + final2['GS'].map(str)
+    
+    final2.to_csv("../data/Base_simu.csv",sep=";")
     

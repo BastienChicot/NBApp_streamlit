@@ -15,13 +15,17 @@ from Services.predictions_joueur import calcul_predictions
 from Services.pred_match import simul_game,create_df
 
 proj_game=pd.read_csv("data/Base_simu.csv",sep=";")
+df=pd.read_csv("data/data_ML.csv", sep=";")
 
-liste_team=np.unique(proj_game['Tm'])
+liste_team=pd.unique(df["Tm"])
+liste_team.sort()
 evo = pd.read_csv("data/evo_carriere.csv",sep=";")
 liste_name=np.unique(evo['full_name'])
 name=pd.DataFrame(np.unique(evo['full_name']))
 name=name.rename(columns={0:"Joueur"}) 
-equipe_simulation=np.unique(proj_game['Tm'])
+equipe_simulation=(proj_game['Tm']).dropna()
+equipe_simulation=pd.unique(equipe_simulation)
+equipe_simulation.sort()
 
 mois =[i for i in range(1,13)]
 
@@ -109,7 +113,7 @@ def onglet_simu():
     month=col3.selectbox("Mois",mois)
     check_roster=st.checkbox("Afficher les effectifs, sélectionner les absents et choisir le nombre de simulations" + "\n" +
                              "(Obligatoire pour pouvoir lancer la simulation)")
-
+    
     if check_roster:
         df_team=proj_game.loc[proj_game['Tm']==tm_dom]
         df_opp=proj_game.loc[proj_game['Tm']==tm_road]

@@ -17,7 +17,7 @@ def maj_data_fun(year):
     # date = currentDateTime.date()
     # year = date.strftime("%Y")
     
-    player_name = pd.read_csv("data/nba_players.csv", sep = ";")
+    player_name = pd.read_csv("../data/nba_players.csv", sep = ";")
     
     annee = str(year)
     year=int(year)
@@ -52,7 +52,7 @@ def maj_data_fun(year):
             gotdata = 'null'
         
     final = pd.concat(df)
-    final.to_csv("data/nba_players_stats_"+str(annee)+".csv", sep =",")
+    final.to_csv("../data/nba_players_stats_"+str(annee)+".csv", sep =",")
     
     ### RECUPERATION DES COACHS
     annees = [
@@ -87,7 +87,7 @@ def maj_data_fun(year):
     df_propre = []
     
     for ann in annees :
-        data=pd.read_csv('data/nba_players_stats_'+str(ann)+'.csv', sep=",")
+        data=pd.read_csv('../data/nba_players_stats_'+str(ann)+'.csv', sep=",")
         
     
         data = data.drop(["Unnamed: 0", "FG%", "3P%", "FT%"], axis=1)
@@ -146,7 +146,7 @@ def maj_data_fun(year):
         df_propre.append(data)
     
     base = pd.concat(df_propre)
-    base.to_csv('data/player_stat_'+str(year)+'.csv', sep=";") 
+    base.to_csv('../data/player_stat_'+str(year)+'.csv', sep=";") 
     
     base["PTS"] = pd.to_numeric(base['PTS'], errors='coerce').convert_dtypes()
     base["AST"] = pd.to_numeric(base['AST'], errors='coerce').convert_dtypes()
@@ -271,11 +271,11 @@ def maj_data_fun(year):
     cluster = pd.merge(df_coach, df_team, how = "outer")
     cluster = pd.merge(cluster, df_player, how = "outer")
     
-    cluster.to_csv("data/cluster.csv", sep=";")
+    cluster.to_csv("../data/cluster.csv", sep=";")
     
     ### Base finale pour machine learning
     
-    team_stat = pd.read_csv("data/teamstats.csv", sep=";")
+    team_stat = pd.read_csv("../data/teamstats.csv", sep=";")
     data_ML = pd.merge(base, team_stat, how='left', on=['Opp','annee'])
     
     data_ML['Prod'] = data_ML['PTS']+data_ML['AST']+data_ML['TRB']+data_ML['BLK']+data_ML['STL']-(data_ML['TOV']+data_ML[
@@ -283,9 +283,8 @@ def maj_data_fun(year):
     data_ML = data_ML[["full_name","Date","annee","Tm","Opp","Opp_name","Opp_Coach",
                  "age","minutes","GS","Domicile","month","PTS","AST","TRB","FGA",
                  "TOV","PF","PTS_diff","AST_diff","TRB_diff","FGA_moy","TOV_moy","PF_moy",
-                 "cluster_coach","cluster_player","cluster_team","Team","Conf",
-                 "DRtg","DRtg/A","Div","L","MOV","MOV/A","NRtg","NRtg/A",
-                 "ORtg","ORtg/A","W","W/L%","Prod"]]
+                 "cluster_coach","cluster_player","cluster_team","Team",
+                 "DRtg","Prod"]]
     
     data_ML["minutes"] = pd.to_numeric(data_ML['minutes'], errors='coerce').convert_dtypes()
     data_ML['Prod_min']=data_ML['Prod']/data_ML['minutes']
@@ -314,4 +313,4 @@ def maj_data_fun(year):
     data_ML = pd.merge(data_ML, count, on='full_name')
     data_ML = data_ML.replace([np.inf, -np.inf], np.nan)
     data_ML = data_ML.dropna() 
-    data_ML.to_csv("data/data_ML.csv", sep=";")
+    data_ML.to_csv("../data/data_ML.csv", sep=";")
