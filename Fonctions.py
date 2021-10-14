@@ -123,42 +123,42 @@ def onglet_simu():
         road_select = col2.multiselect('Cliquer sur les joueurs visiteurs absents', road_player)
         slide = col3.slider("Nombre de simulations",min_value=10,max_value=500,step=1)
         
-    if st.button("Lancer la prédiction"):
-        my_bar = st.progress(0)
-
-        mask_home = ~df_team['full_name'].isin(home_select)
-        mask_road = ~df_opp['full_name'].isin(road_select)
-        df_team = df_team[mask_home]
-        df_opp = df_opp[mask_road]
-
-        equipe=str(tm_dom)
-        Opp=str(tm_road)
-        df_team['Opp']=Opp
-        df_opp['Opp']=equipe
-        df_team=create_df(df_team,month)
-        df_opp=create_df(df_opp,month)
+        if st.button("Lancer la prédiction"):
+            my_bar = st.progress(0)
     
-        final=[]
+            mask_home = ~df_team['full_name'].isin(home_select)
+            mask_road = ~df_opp['full_name'].isin(road_select)
+            df_team = df_team[mask_home]
+            df_opp = df_opp[mask_road]
+    
+            equipe=str(tm_dom)
+            Opp=str(tm_road)
+            df_team['Opp']=Opp
+            df_opp['Opp']=equipe
+            df_team=create_df(df_team,month)
+            df_opp=create_df(df_opp,month)
         
-        for i in range (slide):
-            j=int(i/(slide/100))
-            my_bar.progress(j)
-            bilan=simul_game(equipe,Opp,df_team,df_opp,month)  
-            final.append(bilan)
+            final=[]
             
-        df_fin=pd.concat(final)
-        df_fin['victoire']=df_fin.Victoire.astype(float)
-        df_final= df_fin.groupby(df_fin['Team']).sum().reset_index()
-        win = df_final['victoire']
-        loss = slide-df_final['victoire']
-        
-        win=round(win/slide*100,2)
-        loss=round(loss/slide*100,2)
-        
-        win = str(*win)
-        loss = str(*loss)
-        
-        st.text("Pourcentage de victoire de "+tm_dom+" : " +win)
-        st.text("Pourcentage de victoire de "+tm_road+" : " +loss)
+            for i in range (slide):
+                j=int(i/(slide/100))
+                my_bar.progress(j)
+                bilan=simul_game(equipe,Opp,df_team,df_opp,month)  
+                final.append(bilan)
+                
+            df_fin=pd.concat(final)
+            df_fin['victoire']=df_fin.Victoire.astype(float)
+            df_final= df_fin.groupby(df_fin['Team']).sum().reset_index()
+            win = df_final['victoire']
+            loss = slide-df_final['victoire']
+            
+            win=round(win/slide*100,2)
+            loss=round(loss/slide*100,2)
+            
+            win = str(*win)
+            loss = str(*loss)
+            
+            st.text("Pourcentage de victoire de "+tm_dom+" : " +win)
+            st.text("Pourcentage de victoire de "+tm_road+" : " +loss)
 
         

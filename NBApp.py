@@ -7,6 +7,14 @@ Created on Fri Oct  1 10:05:11 2021
 import streamlit as st
 from Fonctions import onglet_stat,onglet_prediction,onglet_simu
 import pandas as pd
+from PIL import Image
+
+icon=Image.open("icone.ico")
+st.set_page_config(
+    page_title="NBApp pour parieur",
+    page_icon=icon,
+    layout="wide",
+    )
 
 name_team=pd.read_csv("data/correspondance_equipe.csv",sep=";")
 del name_team["Unnamed: 0"]
