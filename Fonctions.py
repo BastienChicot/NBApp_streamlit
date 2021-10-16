@@ -16,6 +16,7 @@ from Services.pred_match import simul_game,create_df
 
 proj_game=pd.read_csv("data/Base_simu.csv",sep=";")
 df=pd.read_csv("data/data_ML.csv", sep=";")
+players_base = pd.read_csv('data/nba_players.csv', sep=";")
 
 liste_team=pd.unique(df["Tm"])
 liste_team.sort()
@@ -38,9 +39,19 @@ def onglet_stat():
     opp_option=col1.selectbox('Opponent team',liste_team)
     button_stats = col1.button("Afficher les stats du joueur")
     col2.text("Liste des joueurs en activité."+"\n"+"Retrouver la bonne orthographe"+"\n"+"si votre requête ne fonctionne pas." )
-    
+        
     def affich_stats(a,opp_option,tm_option):
         try:
+            ##Afficher le lien basketball reference
+            full_name=str(a)
+            code_base = players_base.loc[players_base['full_name'] == full_name].values[0]
+            y = code_base[2:3]
+            code = ''.join(y)
+            annee = '2021'
+            url = 'https://www.basketball-reference.com/players/a/'+str(code)+'/gamelog/'+str(annee)
+            col2.markdown(url, unsafe_allow_html=True)
+        
+            #sorties stats
             df1=evo.loc[evo["full_name"]==str(a)]
             df1=df1[["year","PRP","DEF","MIS","MP"]]
             df1.sort_values(by=['year'])

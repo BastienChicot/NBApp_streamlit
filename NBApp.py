@@ -10,6 +10,7 @@ import pandas as pd
 from PIL import Image
 
 icon=Image.open("icone.ico")
+
 st.set_page_config(
     page_title="NBApp pour parieur",
     page_icon=icon,
