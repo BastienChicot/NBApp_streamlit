@@ -12,7 +12,7 @@ import pandas as pd
 
 df=pd.read_csv("data/data_ML.csv", sep=";")
 players_base = pd.read_csv('data/nba_players.csv', sep=";")
-data_saison=pd.read_csv("data/nba_players_stats_2021.csv", sep=",")
+data_saison=pd.read_csv("data/nba_players_stats_2022.csv", sep=",")
 
 
 def stat_20matchs_splits(full_name):

@@ -15,7 +15,7 @@ import numpy as np
 def maj_data_fun(year):
     # currentDateTime = datetime.datetime.now()
     # date = currentDateTime.date()
-    # year = date.strftime("%Y")
+    #year = 2022
     
     player_name = pd.read_csv("../data/nba_players.csv", sep = ";")
     
@@ -92,12 +92,12 @@ def maj_data_fun(year):
     
         data = data.drop(["Unnamed: 0", "FG%", "3P%", "FT%"], axis=1)
         
-        if ann<2022 :
+        if ann<2023 :
             indexNames = data[ data['Rk'] == 'Rk' ].index
             # Delete these row indexes from dataFrame
             data.drop(indexNames , inplace=True)
         
-        if ann== 2021:        
+        if ann== 2021 or ann==2022:        
             indexNames2 = data[ data['GS'] == 'Did Not Dress' ].index
             indexNames3 = data[ data['GS'] == 'Did Not Play' ].index
             indexNames4 = data[ data['GS'] == 'Inactive' ].index

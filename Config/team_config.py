@@ -87,7 +87,7 @@ def recup_roster():
     final.to_csv("roster.csv",sep=";")
     
 def teamstats():
-    years=[2017,2018,2019,2020,2021]
+    years=[2017,2018,2019,2020,2021,2022]
     
     final=[]
     for year in years :

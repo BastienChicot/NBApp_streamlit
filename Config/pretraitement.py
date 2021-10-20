@@ -31,8 +31,9 @@ from data_ml import maj_data_fun
 from team_config import stat_teams, recup_roster,teamstats
 from base_simu import base_simu_fun
 from calcul_indice_team import calcul_indice
+from entrainement_modèles import train_model_ast,train_model_trb,train_model_pts,train_model_fga,train_model_simu
 
-annee=2021
+annee=2022
 
 ##0. Teamstats
 print("Récupération des stats d'équipes")
@@ -62,3 +63,12 @@ print("base_simu à jour")
 print("Mise à jour des indices")
 calcul_indice(annee)
 print("Traitement terminé")
+
+#5. Entrainement des modèles
+print("Entrainement des modèles de prédiction")
+train_model_ast()
+train_model_fga()
+train_model_pts()
+train_model_trb()
+train_model_simu()
+print("Fin de la mise à jour des modèles")
