@@ -31,7 +31,7 @@ from data_ml import maj_data_fun
 from team_config import stat_teams, recup_roster,teamstats
 from base_simu import base_simu_fun
 from calcul_indice_team import calcul_indice
-from entrainement_modèles import train_model_ast,train_model_trb,train_model_pts,train_model_fga,train_model_simu
+from Entrainement_modèles import train_model_ast,train_model_trb,train_model_pts,train_model_fga,train_model_simu
 
 annee=2022
 

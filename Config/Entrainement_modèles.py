@@ -17,7 +17,7 @@ from sklearn.linear_model import LinearRegression, RidgeCV
 from joblib import dump
 import numpy as np
 
-data = pd.read_csv("data/data_ML.csv", sep=";")
+data = pd.read_csv("../data/data_ML.csv", sep=";")
 
 df = data.copy()
 
@@ -60,7 +60,7 @@ def train_model_pts():
     
     Ridge = make_pipeline(preprocessor,RidgeCV(alphas=[0.61],cv=5))  
     Ridge.fit(X, y.values.ravel())
-    dump(Ridge, 'models/Ridge_PTS.joblib')
+    dump(Ridge, '../models/Ridge_PTS.joblib')
     print("Entrainement du modèle de prediction des points")
     
 def train_model_ast():
@@ -105,7 +105,7 @@ def train_model_ast():
                                                        fit_intercept=False,
                                                        n_jobs=0.1))
     Lin_Reg.fit(X, y.values.ravel())
-    dump(Lin_Reg, 'models/Lin_ast.joblib')
+    dump(Lin_Reg, '../models/Lin_ast.joblib')
     print("Entrainement du modèle de prediction des assists")
     
 def train_model_trb():
@@ -150,7 +150,7 @@ def train_model_trb():
                                                        fit_intercept=False,
                                                        n_jobs=0.1))
     Lin_Reg.fit(X, y.values.ravel())
-    dump(Lin_Reg, 'models/Lin_trb.joblib')
+    dump(Lin_Reg, '../models/Lin_trb.joblib')
     print("Entrainement du modèle de prediction des rebonds")
     
 def train_model_fga():
@@ -180,7 +180,7 @@ def train_model_fga():
                                                activation='relu',solver='adam',
                                                alpha=0.0001,learning_rate='adaptive'))
     MLP.fit(X, y.values.ravel())
-    dump(MLP, 'models/MLP_FGA_pred.joblib')
+    dump(MLP, '../models/MLP_FGA_pred.joblib')
     print("Entrainement du modèle de prediction des tirs pris")
 
 def train_model_simu():
@@ -239,5 +239,5 @@ def train_model_simu():
     # np.percentile(df1['diff'],97.5)
     # np.percentile(df1['diff'],2.5)
     # np.std(df1['diff'])
-    dump(Ridge, '../Ridge_PTS_simu.joblib')
+    dump(Ridge, '../models/Ridge_PTS_simu.joblib')
     print("Entrainement du modèle de prediction des points pour les simu")
