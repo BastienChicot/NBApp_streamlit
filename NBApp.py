@@ -8,6 +8,7 @@ import streamlit as st
 from Fonctions import onglet_stat,onglet_prediction,onglet_simu
 import pandas as pd
 from PIL import Image
+from Services.Tennis import page_tennis
 
 icon=Image.open("icone.ico")
 
@@ -22,7 +23,7 @@ del name_team["Unnamed: 0"]
 del name_team["Unnamed: 0.1"]
 name_team=name_team.set_index('Tm')
 
-st.sidebar.header("Choisir une page")
+st.sidebar.header("CHOISIR UNE PAGE")
 
 page_choice = st.sidebar.selectbox("Sports",("NBA","Tennis"))
 
@@ -43,7 +44,9 @@ if page_choice == "NBA":
 
 if page_choice=="Tennis":
     menu_choice = st.sidebar.radio("Onglets",
-                                   ("Etudier un match",
-                                    "Projections individuelles",
-                                    "Simuler un match"))
-    st.title("Page en cours de construction")
+                                   ("Etudier un joueur",
+                                    "Projections"))
+    if menu_choice == "Etudier un joueur":
+        page_tennis()
+    if menu_choice == "Projections":
+        st.title("Page en cours de construction")
