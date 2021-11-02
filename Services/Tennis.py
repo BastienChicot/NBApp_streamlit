@@ -11,10 +11,15 @@ import streamlit as st
 import altair as alt
 
 df=pd.read_csv("data/base_tennis.csv",sep=";")
+wta=pd.read_csv("data/base_tennis_wta.csv",sep=";")
 
 liste_nom = np.unique(df["name"])
 liste_surface = pd.unique(df["surface"])
 liste_tournoi = pd.unique(df["tourney_name"])
+
+liste_nom_wta = np.unique(wta["name"])
+liste_surface_wta = pd.unique(wta["surface"])
+liste_tournoi_wta = pd.unique(wta["tourney_name"])
 
 def page_tennis():
     select_nom = st.selectbox("Selectionner un joueur",liste_nom,index=1691)
@@ -71,7 +76,63 @@ def page_tennis():
                 
                 st.subheader("Statistiques contre "+str(adv)+" à " +str(tour))
                 st.dataframe(vs)
+
+def page_wta():
+    select_nom = st.selectbox("Selectionner un joueur",liste_nom_wta,index=293)
+    if select_nom:
+        st.header(select_nom)
+        data=wta.loc[wta["name"]==select_nom]
+        caract=data[["age","ht","hand","ioc"]]
+        caract=caract.drop_duplicates()
+        caract=caract.loc[caract["age"]==max(caract["age"])]
+        st.text("Nationalité : " + str(*caract["ioc"]))
+        col1, col2,col3 = st.columns(3)
+        col1.text("Age : " + "\n" + str(int(caract["age"])))
+        col2.text("Taille : " + "\n" + str(int(caract["ht"])))
+        col3.text("Main forte : " + "\n" + str(*caract["hand"]))
         
+        stat,carr=stat_base(data)        
+        st.subheader("Statistiques par saison : ")
+        st.dataframe(stat.style.format("{:.3}"))
+        st.subheader("Statistiques en carrière : ")
+        st.dataframe(carr.style.format("{:.3}"))
+        
+        type_rech=st.radio("Rechercher par : ",("Surface","Tournoi"))
+        
+        if type_rech == "Surface":
+            col4, col5 = st.columns(2)
+    
+            surf=col4.selectbox("Choisir une surface : ",liste_surface_wta)
+            adv=col5.selectbox("Choisir un adversaire : ",liste_nom_wta,index=288)
+            affich=col5.button("Afficher les statistiques")
+            
+            if affich :
+                graphic,vs=stat_by_surface(data,surf,adv)
+                st.subheader("Pourcentage de victoires")
+                st.text("pct_year = Pourcentage de victoires par an" + "\n" +
+                        "pct = Pourcentage de victoires sur la surface sélectionée")
+                st.altair_chart(graphic, use_container_width=True)
+                
+                st.subheader("Statistiques contre "+str(adv)+" (surface = " +str(surf)+" )")
+                st.dataframe(vs)
+            
+        if type_rech == "Tournoi":
+            col4, col5 = st.columns(2)
+    
+            tour=col4.selectbox("Choisir un tournoi : ",liste_tournoi_wta)
+            adv=col5.selectbox("Choisir un adversaire : ",liste_nom_wta,index=1846)
+            affich=col5.button("Afficher les statistiques")
+            
+            if affich:
+                graphic,vs=stat_by_tournoi(data,tour,adv)
+                st.subheader("Pourcentage de victoires")
+                st.text("pct_year = Pourcentage de victoires par an" + "\n" +
+                        "pct = Pourcentage de victoires sur le tournoi sélectioné")
+                st.altair_chart(graphic, use_container_width=True)
+                
+                st.subheader("Statistiques contre "+str(adv)+" à " +str(tour))
+                st.dataframe(vs)
+
 def stat_base(data):
     data=data.sort_values(by=['tourney_date'],ascending=False)
     carr=data[["ace_car","df_car","nb_set_car"]]
