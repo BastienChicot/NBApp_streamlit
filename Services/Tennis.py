@@ -9,6 +9,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import altair as alt
+from joblib import load
 
 df=pd.read_csv("data/base_tennis.csv",sep=";")
 wta=pd.read_csv("data/base_tennis_wta.csv",sep=";")
@@ -16,6 +17,7 @@ wta=pd.read_csv("data/base_tennis_wta.csv",sep=";")
 liste_nom = np.unique(df["name"])
 liste_surface = pd.unique(df["surface"])
 liste_tournoi = pd.unique(df["tourney_name"])
+liste_level = pd.unique(df["tourney_level"])
 
 liste_nom_wta = np.unique(wta["name"])
 liste_surface_wta = pd.unique(wta["surface"])
@@ -236,3 +238,105 @@ def stat_by_tournoi(data,tour,adv):
                           "nb_set_diff_s":"Différence nb de set/moyenne saison"})
     
     return(graphic,vs)
+
+def page_predi_atp():
+    cluster=pd.read_csv("data/Cluster_tennis.csv",sep=";")
+    col1 , col2, col3 = st.columns(3)
+    select_nom = col1.selectbox("Selectionner un joueur",liste_nom,index=1691)
+    surf=col2.selectbox("Choisir une surface : ",liste_surface)
+    adv=col3.selectbox("Choisir un adversaire : ",liste_nom,index=1846)
+    lvl=col1.selectbox("Choisir le niveau du tournoi : ",liste_level)
+    st.text("Level : "+"\n"+"A -> ATP"+"\n"+"D -> Davis"+"\n"+"G -> Grand chelem"+"\n"+"M -> Masters")
+    
+    slide = col2.slider("Nombre de simulations",min_value=1,max_value=50,step=1)
+    
+    launch=st.button("Lancer les prédictions")
+    
+    if launch:
+        my_bar = st.progress(0)
+        df_pred=df.loc[df["name"]==select_nom]
+        df_min=df_pred.loc[df_pred["advers"]==adv]
+        
+        df_pred=df_pred[["age","ht","name","seed"]]
+        df_pred["advers"]=adv
+        
+        minutes=np.mean(df_min["minutes"])
+        
+        df_pred=df_pred.loc[df_pred["age"]==max(df_pred["age"])]
+        df_pred=df_pred.drop_duplicates()
+        
+        df_advers=cluster.loc[cluster["advers"]==adv]
+        df_advers=df_advers.loc[df_advers["age"]==max(df_advers["age"])]
+        df_advers=df_advers[["advers","cluster"]]
+        df_advers=df_advers.drop_duplicates()
+        
+        df_pred=df_pred.merge(df_advers,on="advers",how="left")
+        df_pred["surface"]=str(surf)
+        df_pred["tourney_level"]=str(lvl)
+        df_pred["minutes"]=minutes
+        try :
+            df_pred.loc[(df_pred['seed']<100),"classe"] = True
+            df_pred.loc[(df_pred['seed']>=100),"classe"] = False
+        except : 
+            df_pred["classe"] = False
+        
+        X = df_pred[['age',
+                'ht',
+                'name',
+                'surface',
+                'tourney_level',
+                'classe',
+                'minutes',
+                "cluster"
+                ]]
+        finalace=[]
+        finalwin=[]
+        
+        for i in range (slide):
+                j=int(i/(slide/100))
+                my_bar.progress(j)
+                ace=simul_ace(X)  
+                wins=simul_win(X)
+                finalace.append(ace)
+                finalwin.append(wins)
+                
+        meanace = round(np.mean(finalace),2)
+        
+        meanwin = round(np.mean(finalwin)*100,2)
+        
+        nb_ace= str(meanace)
+        vic = str(meanwin)
+            
+        st.text("Prévision d'aces de "+select_nom+" : " +nb_ace)
+        st.text("Prévision de victoire de "+select_nom+" : " +vic+" %")
+                
+    
+def simul_ace(X):
+    ace=load("models/predi_ace")
+    
+    try :
+            
+        X['minutes_var']=np.random.normal(0,10,len(X))
+        X['minutes']=X['minutes']+X['minutes_var']
+        del X['minutes_var']
+        
+        pred=ace.predict(X)
+        prediction=float(*pred)
+        return(prediction)
+    except:
+        pass
+    
+def simul_win(X):
+    win=load("models/predi_win")
+    
+    try :
+            
+        X['minutes_var']=np.random.normal(0,10,len(X))
+        X['minutes']=X['minutes']+X['minutes_var']
+        del X['minutes_var']
+        
+        pred=win.predict(X)
+        prediction=float(*pred)
+        return(prediction)
+    except:
+        pass
