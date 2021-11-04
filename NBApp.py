@@ -8,7 +8,7 @@ import streamlit as st
 from Fonctions import onglet_stat,onglet_prediction,onglet_simu
 import pandas as pd
 from PIL import Image
-from Services.Tennis import page_tennis,page_wta,page_predi_atp
+from Services.Tennis import page_tennis,page_wta,page_predi
 
 icon=Image.open("icone.ico")
 
@@ -53,4 +53,8 @@ if page_choice=="Tennis":
         if cat=="WTA":
             page_wta()
     if menu_choice == "Projections":
-        page_predi_atp()
+        cat=st.radio("Catégorie : ",("ATP","WTA"))
+        if cat=="ATP":
+            page_predi("atp")
+        if cat=="WTA":
+            page_predi("wta")

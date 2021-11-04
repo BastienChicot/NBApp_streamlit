@@ -23,6 +23,9 @@ Created on Wed Oct  6 15:57:05 2021
 #5. EVO CARRIERE quand j'ai le temps via NBA/old/Maj BDD/3.carriere.py
 #6. NBA PLAYERS 1 fois par an pour ajouter les rookies directement dans l'ancien fichier 
     ### NE JAMAIS OVERWRITE LE FICHIER NBA PLAYER!!!
+    
+#7 MISE A JOUR DES BASES TENNIS AVEC LE FICHIER pretraitement_tennis.py
+#8 MISE A JOUR DES MODELES DE PREDICTIONS DE TENNIS avec maj_modeles_tennis.py
 import os
 
 os.chdir("C:/Users/basti/OneDrive/Bureau/App web/Config")
@@ -32,8 +35,11 @@ from team_config import stat_teams, recup_roster,teamstats
 from base_simu import base_simu_fun
 from calcul_indice_team import calcul_indice
 from Entrainement_modèles import train_model_ast,train_model_trb,train_model_pts,train_model_fga,train_model_simu
+from pretraitement_tennis import create_fichier, nettoyage
+from maj_modeles_tennis import maj_model_tennis
 
 annee=2022
+year=2021
 
 ##0. Teamstats
 print("Récupération des stats d'équipes")
@@ -72,3 +78,18 @@ train_model_pts()
 train_model_trb()
 train_model_simu()
 print("Fin de la mise à jour des modèles")
+
+#7 Mise à jour des données tennis
+print("Téléchargement des données tennis")
+create_fichier(year)
+print("fichiers téléchargés")
+print("Création des bases wta et atp")
+nettoyage("atp")
+nettoyage("wta")
+print("fichiers tennis à jour")
+
+#8 Mise à jour des modèles de prédiction tennis
+print("Mise à jour des modèles de prédiction tennis")
+maj_model_tennis("atp")
+maj_model_tennis("wta")
+print("Modèles de prédictions à jour")
