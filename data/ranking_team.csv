@@ -1,31 +1,31 @@
 ;TEAM;PTS ALLOW;REB ALLOW;ORB ALLOW;AST ALLOW;STL;DEF REB;FG ALLOW;3PT ALLOW;BLK;TOV;OPP FG%;OPP 3PT%;DEF RTG
-0;Denver Nuggets Nuggets;1;3;10;8;6;5;2;3;24;6;6;4;25
-1;Miami Heat Heat;2;1;3;7;20;3;1;20;30;16;1;5;26
-2;Utah Jazz Jazz;3;8;26;1;23;4;5;2;10;26;2;1;29
-3;Chicago Bulls Bulls;4;25;24;2;9;21;6;4;9;4;7;12;12
-4;Toronto Raptors Raptors;5;2;6;13;3;6;3;11;28;3;17;17;22
-5;Minnesota Timberwolves Timberwolves;6;27;30;4;4;12;4;6;2;2;3;2;9
-6;Dallas Mavericks Mavericks;7;28;16;19;24;29;12;17;16;15;15;16;14
-7;Golden State Warriors Warriors;8;9;2;9;13;22;10;19;15;12;8;6;19
-8;Philadelphia 76ers 76ers;9;7;23;23;16;2;9;12;3;23;9;21;28
-9;Cleveland Cavaliers Cavaliers;10;21;22;21;17;13;20;5;26;10;22;8;1
-10;Brooklyn Nets Nets;11;18;17;6;26;17;11;8;8;27;4;9;18
-11;Los Angeles Clippers Clippers;12;30;27;3;1;30;7;16;25;1;11;22;21
-12;Atlanta Hawks Hawks;13;10;13;17;29;9;14;7;23;28;10;7;15
-13;San Antonio Spurs Spurs;14;19;7;5;7;24;23;10;17;5;26;14;5
-14;Detroit Pistons Pistons;15;11;1;16;5;26;15;13;12;8;30;30;4
-15;Washington Wizards Wizards;16;22;9;10;22;23;24;1;7;25;14;3;2
-16;Houston Rockets Rockets;17;16;15;18;8;18;13;25;21;11;13;13;6
-17;Portland Trail Blazers Blazers;18;5;8;29;18;8;17;27;13;19;18;25;3
-18;New York Knicks Knicks;19;17;19;26;19;15;8;26;6;21;5;15;24
-19;Phoenix Suns Suns;20;12;4;22;14;20;19;30;29;17;23;28;20
-20;New Orleans Pelicans Pelicans;21;13;11;15;25;11;16;21;14;22;21;27;10
-21;Oklahoma City Thunder Thunder;22;26;12;28;21;27;28;29;27;18;27;24;8
-22;Sacramento Kings Kings;23;24;28;12;28;19;22;9;20;30;16;11;7
-23;Milwaukee Bucks Bucks;24;20;5;20;15;25;25;18;22;24;24;19;30
-24;Los Angeles Lakers Lakers;25;23;29;27;10;16;18;15;4;7;20;18;27
-25;Indiana Pacers Pacers;26;14;18;14;27;10;21;14;5;20;19;26;23
-26;Orlando Magic Magic;27;4;21;24;30;1;26;23;19;29;25;20;16
-27;Charlotte Hornets Hornets;28;15;20;25;12;14;29;24;18;9;28;10;13
-28;Memphis Grizzlies Grizzlies;29;6;14;30;2;7;30;28;11;13;29;29;11
-29;Boston Celtics Celtics;30;29;25;11;11;28;27;22;1;14;12;23;17
+0;Denver Nuggets Nuggets;1;10;14;8;5;11;4;3;22;7;7;6;25
+1;Miami Heat Heat;2;1;3;5;21;2;1;22;30;19;1;5;26
+2;Toronto Raptors Raptors;3;3;4;10;1;6;2;13;28;3;14;19;22
+3;Utah Jazz Jazz;4;5;20;1;23;4;6;2;10;26;2;1;29
+4;Chicago Bulls Bulls;5;24;25;2;12;16;7;4;4;6;9;16;12
+5;Golden State Warriors Warriors;6;11;1;9;13;24;8;21;15;13;8;4;19
+6;Los Angeles Clippers Clippers;7;30;23;3;2;30;5;11;25;1;6;18;21
+7;Minnesota Timberwolves Timberwolves;8;28;30;4;4;19;3;8;3;2;4;3;9
+8;Philadelphia 76ers 76ers;9;8;24;22;15;3;9;10;2;21;11;21;28
+9;Brooklyn Nets Nets;10;19;17;6;26;20;10;7;7;27;3;11;18
+10;Cleveland Cavaliers Cavaliers;11;22;29;23;14;10;23;5;24;11;20;13;1
+11;Dallas Mavericks Mavericks;12;27;13;17;29;28;12;15;18;20;17;22;14
+12;Atlanta Hawks Hawks;13;7;11;15;27;8;13;6;27;29;10;7;15
+13;Phoenix Suns Suns;14;12;10;21;16;14;16;30;29;12;16;28;20
+14;Detroit Pistons Pistons;15;16;2;16;11;26;15;20;13;8;30;30;4
+15;Milwaukee Bucks Bucks;16;17;9;18;18;22;14;12;21;22;15;8;30
+16;Oklahoma City Thunder Thunder;17;25;18;26;19;27;21;29;26;17;21;23;8
+17;Washington Wizards Wizards;18;23;12;11;22;23;22;1;9;25;13;2;2
+18;Portland Trail Blazers Blazers;19;2;5;30;20;5;19;28;20;23;22;25;3
+19;New York Knicks Knicks;20;20;19;27;25;18;11;26;8;24;5;14;24
+20;San Antonio Spurs Spurs;21;14;6;12;10;21;30;18;19;5;29;20;5
+21;Houston Rockets Rockets;22;15;16;19;9;17;18;19;23;10;19;9;6
+22;New Orleans Pelicans Pelicans;23;13;8;20;17;15;17;16;14;16;26;26;10
+23;Orlando Magic Magic;24;6;26;24;30;1;20;25;17;30;18;15;16
+24;Los Angeles Lakers Lakers;25;21;27;28;7;12;25;17;5;4;25;17;27
+25;Sacramento Kings Kings;26;26;28;7;28;25;24;9;16;28;12;10;7
+26;Indiana Pacers Pacers;27;9;15;14;24;9;26;14;6;18;24;27;23
+27;Memphis Grizzlies Grizzlies;28;4;7;29;3;7;27;27;12;15;28;29;11
+28;Charlotte Hornets Hornets;29;18;21;25;6;13;28;23;11;9;27;12;13
+29;Boston Celtics Celtics;30;29;22;13;8;29;29;24;1;14;23;24;17
