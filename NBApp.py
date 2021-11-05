@@ -66,7 +66,8 @@ if page_choice=="Tennis":
             page_predi("wta")
             
 if page_choice=="Turf":
-    st.sidebar.text("Retrouvez ici les probabilités d'arrivées pour le Quinté du jour")
+    st.sidebar.text("Retrouvez ici les probabilités"+"\n"+
+                    " d'arrivées pour le Quinté du jour")
     st.title("Probabilités d'arrivées pour le quinté")
     page_turf()
     st.text(" ATTENTION : "+"\n"+
