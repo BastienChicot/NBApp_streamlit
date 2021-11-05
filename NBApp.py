@@ -14,6 +14,7 @@ from Fonctions import onglet_stat,onglet_prediction,onglet_simu
 import pandas as pd
 from PIL import Image
 from Services.Tennis import page_tennis,page_wta,page_predi
+from Services.Turf import page_turf
 
 icon=Image.open("icone.ico")
 
@@ -30,7 +31,7 @@ name_team=name_team.set_index('Tm')
 
 st.sidebar.header("CHOISIR UNE PAGE")
 
-page_choice = st.sidebar.selectbox("Sports",("NBA","Tennis"))
+page_choice = st.sidebar.selectbox("Sports",("NBA","Tennis","Turf"))
 
 if page_choice == "NBA":
     menu_choice = st.sidebar.radio("Onglets",
@@ -63,3 +64,12 @@ if page_choice=="Tennis":
             page_predi("atp")
         if cat=="WTA":
             page_predi("wta")
+            
+if page_choice=="Turf":
+    st.sidebar.text("Retrouvez ici les probabilités d'arrivées pour le Quinté du jour")
+    st.title("Probabilités d'arrivées pour le quinté")
+    page_turf()
+    st.text(" ATTENTION : "+"\n"+
+            "Les prédictions présentées ci-dessus sont dépendantes des informations disponibles ce matin" + "\n" +
+            "\n"+"Trier sur la colonne 'pred_qt_lin' pour obtenir un ordre d'arrivée en fonction de l'indice calculé")
+    

@@ -15,7 +15,6 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.preprocessing import PolynomialFeatures
 
-from sklearn.model_selection import train_test_split
 from sklearn.compose import make_column_transformer
 
 # df_atp=pd.read_csv("../data/base_tennis_atp.csv",sep=";")
