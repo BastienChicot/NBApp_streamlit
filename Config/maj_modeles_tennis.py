@@ -17,7 +17,6 @@ from sklearn.preprocessing import PolynomialFeatures
 
 from sklearn.model_selection import train_test_split
 from sklearn.compose import make_column_transformer
-from sklearn.cluster import KMeans
 
 # df_atp=pd.read_csv("../data/base_tennis_atp.csv",sep=";")
 # df_wta=pd.read_csv("../data/base_tennis_wta.csv",sep=";")
@@ -39,22 +38,6 @@ def maj_model_tennis(cat):
     df_reg.loc[(df_reg['result']=="win"),"win"] = 1
     df_reg.loc[(df_reg['result']=="lose"),"win"] = 0
     
-    df_cluster = df_reg
-    df_cluster = df_cluster[["name","ht","classe","age","ace_car","df_car","nb_set_car"]]
-    df_cluster = df_cluster.set_index(['name'])
-    
-    x = df_cluster.values 
-    
-    kmeans = KMeans(n_clusters=20, random_state=0).fit(x)
-    kmeans.labels_
-    df_cluster['cluster'] = kmeans.labels_
-    df_cluster.loc[df_cluster.cluster == 0].count()
-    
-    df_cluster = df_cluster.reset_index()
-    
-    df_cluster=df_cluster.rename(columns={"name":"advers"})
-    df_cluster=df_cluster[["advers","age","cluster"]]
-    df_reg=df_reg.merge(df_cluster,on=["advers","age"],how="outer")
     
     ### MODELE ACE
     count = df_reg.groupby('name').count().reset_index()
@@ -64,32 +47,36 @@ def maj_model_tennis(cat):
     count.drop(indexNames , inplace=True)
     
     df_reg = pd.merge(df_reg, count, on=['name'])
-    
-    df_cluster.to_csv("../data/Cluster_tennis_"+str(cat)+".csv",sep=";")
-    
-    df_ML=df_reg[["win","ace",'age',"tourney_id","nb_set",
+       
+    df_w=df_reg[["tourney_id","win","ace",'age',"nb_set",
             'ht',
             'name',
             'surface',
             'tourney_level',
             'classe',
             'minutes',
-            "cluster",
             "advers"]]
     
-    df_ML=df_ML.dropna()
+    count = df_w.groupby(['name',"advers"]).count().reset_index()
+    count = count[['name',"advers","tourney_id"]]
+    count = count.rename(columns={"tourney_id":"count"})
+    indexNames = count[ (count['count'] < 7.5)].index
+    count.drop(indexNames , inplace=True)
     
-    df_ML.to_csv("../data/tennis_"+str(cat)+"-master/base_"+str(cat)+"_ace.csv",sep=";")
+    df_w = pd.merge(df_w, count, on=['name',"advers"])
     
-    y = df_ML[['ace']]
+    df_w=df_w.dropna()
     
-    X = df_ML[['age',
+    df_w.to_csv("../data/tennis_"+str(cat)+"-master/base_"+str(cat)+"_win.csv",sep=";")
+
+    y = df_w[['ace']]
+    
+    X = df_w[['age',
             'ht',
             'name',
             'surface',
-            'classe',
             'minutes',
-            "cluster"
+            "advers"
             ]]
     
     numeric_data = ['age',
@@ -98,14 +85,11 @@ def maj_model_tennis(cat):
                     ]
     object_data = ['name',
                    'surface',
-                   'classe',
-                   "cluster"
+                   'advers'
                    ]
     
     #PIPELINE
-    
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=0)
-    
+       
     numeric_pipeline = make_pipeline(PolynomialFeatures(2),StandardScaler())
     object_pipeline = make_pipeline(OneHotEncoder())
     
@@ -121,27 +105,6 @@ def maj_model_tennis(cat):
     
     ### MODELE WIN
     
-    df_w=df_reg[["tourney_id","win","ace",'age',
-            'ht',
-            'name',
-            'surface',
-            'tourney_level',
-            'classe',
-            'minutes',
-            "cluster",
-            "advers"]]
-    
-    count = df_w.groupby(['name',"advers"]).count().reset_index()
-    count = count[['name',"advers","tourney_id"]]
-    count = count.rename(columns={"tourney_id":"count"})
-    indexNames = count[ (count['count'] < 7.5)].index
-    count.drop(indexNames , inplace=True)
-    
-    df_w = pd.merge(df_w, count, on=['name',"advers"])
-    
-    df_w=df_w.dropna()
-    
-    df_w.to_csv("../data/tennis_"+str(cat)+"-master/base_"+str(cat)+"_win.csv",sep=";")
     
     b = df_w[['win']]
     
@@ -161,9 +124,7 @@ def maj_model_tennis(cat):
                    'surface',
                    "advers"
                    ]
-    
-    A_train, A_test, b_train, b_test = train_test_split(A, b, test_size=0.1, random_state=2)
-    
+        
     numeric_pipeline = make_pipeline(PolynomialFeatures(2),StandardScaler())
     object_pipeline = make_pipeline(OneHotEncoder())
     
@@ -180,15 +141,14 @@ def maj_model_tennis(cat):
     dump(MLP,"../models/predi_win"+str(cat))
     
     ### MODELE NB SET
-    d = df_ML[['nb_set']]
+    d = df_w[['nb_set']]
     
-    C = df_ML[['age',
+    C = df_w[['age',
             'ht',
             'name',
             'surface',
-            'classe',
             'minutes',
-            "cluster"
+            "advers"
             ]]
     
     numeric_data_s = ['age',
@@ -197,14 +157,11 @@ def maj_model_tennis(cat):
                     ]
     object_data_s = ['name',
                    'surface',
-                   'classe',
-                   "cluster"
+                   'advers'
                    ]
     
     #PIPELINE
-    
-    C_train, C_test, d_train, d_test = train_test_split(C, d, test_size=0.1, random_state=0)
-    
+        
     numeric_pipeline = make_pipeline(PolynomialFeatures(2),StandardScaler())
     object_pipeline = make_pipeline(OneHotEncoder())
     
@@ -215,7 +172,7 @@ def maj_model_tennis(cat):
     
     SGD.fit(C, d)
     
-    dump(RFR,"../models/predi_set"+str(cat))
+    dump(SGD,"../models/predi_set"+str(cat))
 
 
 

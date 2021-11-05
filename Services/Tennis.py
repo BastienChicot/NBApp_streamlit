@@ -17,20 +17,28 @@ wta=pd.read_csv("data/base_tennis_wta.csv",sep=";")
 base_win_atp=pd.read_csv("data/tennis_atp-master/base_atp_win.csv",sep=";")
 base_win_wta=pd.read_csv("data/tennis_wta-master/base_wta_win.csv",sep=";")
 
-liste_nom = np.unique(df["name"])
+liste_nom = list(np.unique(df["name"]))
+djoko = liste_nom.index("Novak Djokovic")
+rafa = liste_nom.index("Rafael Nadal")
 liste_surface = pd.unique(df["surface"])
 liste_tournoi = pd.unique(df["tourney_name"])
 liste_level = pd.unique(df["tourney_level"])
 
-liste_nom_wta = np.unique(wta["name"])
+liste_nom_wta = list(np.unique(wta["name"]))
+barty = liste_nom_wta.index("Ashleigh Barty")
+saba = liste_nom_wta.index("Aryna Sabalenka")
 liste_surface_wta = pd.unique(wta["surface"])
 liste_tournoi_wta = pd.unique(wta["tourney_name"])
 
-liste_nom_predi_atp = np.unique(base_win_atp["name"])
-liste_nom_predi_wta = np.unique(base_win_wta["name"])
+liste_nom_predi_atp = list(np.unique(base_win_atp["name"]))
+djoko2 = liste_nom_predi_atp.index("Novak Djokovic")
+rafa2 = liste_nom_predi_atp.index("Rafael Nadal")
+liste_nom_predi_wta = list(np.unique(base_win_wta["name"]))
+barty2 = liste_nom_predi_wta.index("Ashleigh Barty")
+saba2 = liste_nom_predi_wta.index("Aryna Sabalenka")
 
 def page_tennis():
-    select_nom = st.selectbox("Selectionner un joueur",liste_nom,index=1691)
+    select_nom = st.selectbox("Selectionner un joueur",liste_nom,index=djoko)
     if select_nom:
         st.header(select_nom)
         data=df.loc[df["name"]==select_nom]
@@ -55,7 +63,7 @@ def page_tennis():
             col4, col5 = st.columns(2)
     
             surf=col4.selectbox("Choisir une surface : ",liste_surface)
-            adv=col5.selectbox("Choisir un adversaire : ",liste_nom,index=1846)
+            adv=col5.selectbox("Choisir un adversaire : ",liste_nom,index=rafa)
             affich=col5.button("Afficher les statistiques")
             
             if affich :
@@ -72,7 +80,7 @@ def page_tennis():
             col4, col5 = st.columns(2)
     
             tour=col4.selectbox("Choisir un tournoi : ",liste_tournoi)
-            adv=col5.selectbox("Choisir un adversaire : ",liste_nom,index=1846)
+            adv=col5.selectbox("Choisir un adversaire : ",liste_nom,index=rafa)
             affich=col5.button("Afficher les statistiques")
             
             if affich:
@@ -86,7 +94,7 @@ def page_tennis():
                 st.dataframe(vs)
 
 def page_wta():
-    select_nom = st.selectbox("Selectionner un joueur",liste_nom_wta,index=293)
+    select_nom = st.selectbox("Selectionner un joueur",liste_nom_wta,index=barty)
     if select_nom:
         st.header(select_nom)
         data=wta.loc[wta["name"]==select_nom]
@@ -111,7 +119,7 @@ def page_wta():
             col4, col5 = st.columns(2)
     
             surf=col4.selectbox("Choisir une surface : ",liste_surface_wta)
-            adv=col5.selectbox("Choisir un adversaire : ",liste_nom_wta,index=288)
+            adv=col5.selectbox("Choisir un adversaire : ",liste_nom_wta,index=saba)
             affich=col5.button("Afficher les statistiques")
             
             if affich :
@@ -128,7 +136,7 @@ def page_wta():
             col4, col5 = st.columns(2)
     
             tour=col4.selectbox("Choisir un tournoi : ",liste_tournoi_wta)
-            adv=col5.selectbox("Choisir un adversaire : ",liste_nom_wta,index=1846)
+            adv=col5.selectbox("Choisir un adversaire : ",liste_nom_wta,index=saba)
             affich=col5.button("Afficher les statistiques")
             
             if affich:
@@ -246,17 +254,16 @@ def stat_by_tournoi(data,tour,adv):
     return(graphic,vs)
 
 def page_predi(cat):
-    cluster=pd.read_csv("data/Cluster_tennis_"+str(cat)+".csv",sep=";")
     col1 , col2, col3 = st.columns(3)
     if cat=="atp":
-        select_nom = col1.selectbox("Selectionner un joueur",liste_nom_predi_atp,index=107)
+        select_nom = col1.selectbox("Selectionner un joueur",liste_nom_predi_atp,index=djoko2)
         surf=col2.selectbox("Choisir une surface : ",liste_surface)
-        adv=col3.selectbox("Choisir un adversaire : ",liste_nom_predi_atp,index=118)
+        adv=col3.selectbox("Choisir un adversaire : ",liste_nom_predi_atp,index=rafa2)
         lvl=col1.selectbox("Choisir le niveau du tournoi : ",liste_level)
     else:
-        select_nom = col1.selectbox("Selectionner un joueur",liste_nom_predi_wta,index=9)
+        select_nom = col1.selectbox("Selectionner un joueur",liste_nom_predi_wta,index=barty2)
         surf=col2.selectbox("Choisir une surface : ",liste_surface)
-        adv=col3.selectbox("Choisir un adversaire : ",liste_nom_predi_wta,index=12)
+        adv=col3.selectbox("Choisir un adversaire : ",liste_nom_predi_wta,index=saba2)
         lvl=col1.selectbox("Choisir le niveau du tournoi : ",liste_level)
         
     st.text("Level : "+"\n"+"A -> ATP"+"\n"+"D -> Davis"+"\n"+"G -> Grand chelem"+"\n"+"M -> Masters")
@@ -267,63 +274,56 @@ def page_predi(cat):
     invert=st.button("Inverser les joueurs et recommencer une prédiction")   
     
     if launch:
+        my_bar = st.progress(0)
+        if cat=="atp":
+            df_pred=df.loc[df["name"]==select_nom]
+        else:
+            df_pred=wta.loc[wta["name"]==select_nom]
+            
+        df_min=df_pred.loc[df_pred["advers"]==str(adv)]
+        
+        df_pred=df_pred[["age","ht","name","seed"]]
+        df_pred["advers"]=str(adv)
+        
+        minutes=np.mean(df_min["minutes"])
+        df_pred["minutes"]=int(minutes)
+        
         try:
-            my_bar = st.progress(0)
-            if cat=="atp":
-                df_pred=df.loc[df["name"]==select_nom]
-            else:
-                df_pred=wta.loc[wta["name"]==select_nom]
-            df_min=df_pred.loc[df_pred["advers"]==str(adv)]
+            df_pred=df_pred.loc[df_pred["age"]==max(df_pred["age"])]
+            df_pred=df_pred.drop_duplicates()
+        except:
+            df_pred["name"]=str(select_nom)
+            df_pred["age"]=25
+            df_pred["ht"]=175
+            df_pred["seed"]=36
+            df_pred["advers"]=str(adv)
+            df_pred["minutes"]=96
             
-            df_pred=df_pred[["age","ht","name","seed"]]
-            df_pred["advers"]=adv
-            
-            minutes=np.mean(df_min["minutes"])
-            df_pred["minutes"]=minutes
-            
-            try:
-                df_pred=df_pred.loc[df_pred["age"]==max(df_pred["age"])]
-                df_pred=df_pred.drop_duplicates()
-            except:
-                df_pred["name"]=str(select_nom)
-                df_pred["age"]=25
-                df_pred["ht"]=175
-                df_pred["seed"]=36
-                df_pred["advers"]=str(adv)
-                df_pred["minutes"]=96
+        df_pred["surface"]=str(surf)
+        df_pred["tourney_level"]=str(lvl)
+        
+        try :
+            df_pred.loc[(df_pred['seed']<100),"classe"] = True
+            df_pred.loc[(df_pred['seed']>=100),"classe"] = False
+        except : 
+            df_pred["classe"] = False
+        
+        X = df_pred[['age',
+                'ht',
+                'name',
+                'surface',
+                'tourney_level',
+                'classe',
+                'minutes',
+                "advers"
+                ]]
+        
+        finalset=[]
+        finalace=[]
+        finalwin=[]
+        
+        try:
                 
-            df_advers=cluster.loc[cluster["advers"]==str(adv)]
-            df_advers=df_advers.loc[df_advers["age"]==max(df_advers["age"])]
-            df_advers=df_advers[["advers","cluster"]]
-            df_advers=df_advers.drop_duplicates()
-            
-            df_pred=df_pred.merge(df_advers,on="advers",how="left")
-            df_pred["surface"]=str(surf)
-            df_pred["tourney_level"]=str(lvl)
-            
-            try :
-                df_pred.loc[(df_pred['seed']<100),"classe"] = True
-                df_pred.loc[(df_pred['seed']>=100),"classe"] = False
-            except : 
-                df_pred["classe"] = False
-            
-            X = df_pred[['age',
-                    'ht',
-                    'name',
-                    'surface',
-                    'tourney_level',
-                    'classe',
-                    'minutes',
-                    "cluster",
-                    "advers"
-                    ]]
-            
-            X["cluster"]=X["cluster"].astype(int)
-            
-            finalset=[]
-            finalace=[]
-            finalwin=[]
-            
             for i in range (slide):
                 j=int(i/(slide/100))
                 my_bar.progress(j)
@@ -333,7 +333,7 @@ def page_predi(cat):
                 finalset.append(nb_set)
                 finalace.append(ace)
                 finalwin.append(wins)
-
+    
             meanset = round(np.mean(finalset),2)
             if meanset>7 :
                 meanset=7
@@ -350,64 +350,70 @@ def page_predi(cat):
             st.text("Prévision d'aces de "+select_nom+" : " +nb_ace)
             st.text("Prévision de victoire de "+select_nom+" : " +vic+" %")
         except TypeError:
-            st.text("Cette prédiction n'est pas possible à cause d'un manque d'information dans les bases")
+            for i in range (slide):
+                j=int(i/(slide/100))
+                my_bar.progress(j) 
+                wins=simul_win(X,cat)
+                finalwin.append(wins)
+            
+            meanwin = round(np.mean(finalwin)*100,2)
+
+            vic = str(meanwin)
+
+            st.text("Prévision de victoire de "+select_nom+" : " +vic+" %")
+        
         except ValueError:
             st.text("L'une des valeurs est inconnue du modèle de prédiction")
 
     if invert:
+        my_bar = st.progress(0)
+        if cat=="atp":
+            df_pred=df.loc[df["name"]==adv]
+        else:
+            df_pred=wta.loc[wta["name"]==adv]
+        df_min=df_pred.loc[df_pred["advers"]==str(select_nom)]
+        
+        df_pred=df_pred[["age","ht","name","seed"]]
+        df_pred["advers"]=str(select_nom)
+        
+        minutes=np.mean(df_min["minutes"])
+        df_pred["minutes"]=minutes
+        
         try:
-            my_bar = st.progress(0)
-            if cat=="atp":
-                df_pred=df.loc[df["name"]==select_nom]
-            else:
-                df_pred=wta.loc[wta["name"]==select_nom]
-            df_min=df_pred.loc[df_pred["advers"]==select_nom]
-            
-            df_pred=df_pred[["age","ht","name","seed"]]
-            df_pred["advers"]=select_nom
-            
-            minutes=np.mean(df_min["minutes"])
-            df_pred["minutes"]=minutes
-            
-            try:
-                df_pred=df_pred.loc[df_pred["age"]==max(df_pred["age"])]
-                df_pred=df_pred.drop_duplicates()
-            except:
-                df_pred["name"]=select_nom
-                df_pred["age"]=25
-                df_pred["ht"]=175
-                df_pred["seed"]=36
-                df_pred["advers"]=adv
-                df_pred["minutes"]=96
-            
-            df_advers=cluster.loc[cluster["advers"]==select_nom]
-            df_advers=df_advers.loc[df_advers["age"]==max(df_advers["age"])]
-            df_advers=df_advers[["advers","cluster"]]
-            df_advers=df_advers.drop_duplicates()
-            
-            df_pred=df_pred.merge(df_advers,on="advers",how="left")
-            df_pred["surface"]=str(surf)
-            df_pred["tourney_level"]=str(lvl)
-            
-            try :
-                df_pred.loc[(df_pred['seed']<100),"classe"] = True
-                df_pred.loc[(df_pred['seed']>=100),"classe"] = False
-            except : 
-                df_pred["classe"] = False
-            
-            X = df_pred[['age',
-                    'ht',
-                    'name',
-                    'surface',
-                    'tourney_level',
-                    'classe',
-                    'minutes',
-                    "cluster",
-                    "advers"
-                    ]]
-            finalset=[]
-            finalace=[]
-            finalwin=[]
+            df_pred=df_pred.loc[df_pred["age"]==max(df_pred["age"])]
+            df_pred=df_pred.drop_duplicates()
+        except:
+            df_pred["name"]=select_nom
+            df_pred["age"]=25
+            df_pred["ht"]=175
+            df_pred["seed"]=36
+            df_pred["advers"]=adv
+            df_pred["minutes"]=96
+        
+        df_pred["surface"]=str(surf)
+        df_pred["tourney_level"]=str(lvl)
+        
+        try :
+            df_pred.loc[(df_pred['seed']<100),"classe"] = True
+            df_pred.loc[(df_pred['seed']>=100),"classe"] = False
+        except : 
+            df_pred["classe"] = False
+        
+        X = df_pred[['age',
+                'ht',
+                'name',
+                'surface',
+                'tourney_level',
+                'classe',
+                'minutes',
+                "advers"
+                ]]
+        
+        finalset=[]
+        finalace=[]
+        finalwin=[]
+        
+        try:
             
             for i in range (slide):
                     j=int(i/(slide/100))
@@ -435,7 +441,20 @@ def page_predi(cat):
             st.text("Prévision d'aces de "+adv+" : " +nb_ace)
             st.text("Prévision de victoire de "+adv+" : " +vic+" %")
         except TypeError:
-            st.text("Cette prédiction n'est pas possible à cause d'un manque d'information dans les bases")
+            for i in range (slide):
+                    j=int(i/(slide/100))
+                    my_bar.progress(j)
+  
+                    wins=simul_win(X,cat)
+
+                    finalwin.append(wins)
+            
+            meanwin = round(np.mean(finalwin)*100,2)
+
+            vic = str(meanwin)
+
+            st.text("Prévision de victoire de "+adv+" : " +vic+" %")
+        
         except ValueError:
             st.text("L'une des valeurs est inconnue du modèle de prédiction")
             
@@ -446,10 +465,9 @@ def simul_set(X,cat):
         'ht',
         'name',
         'surface',
-        'classe',
         'minutes',
-        "cluster"
-        ]] 
+        "advers"
+        ]]
     B['minutes_var']=np.random.normal(0,10,len(B))
     B['minutes']=B['minutes']+B['minutes_var']
     del B['minutes_var']
@@ -465,9 +483,8 @@ def simul_ace(X,cat):
         'ht',
         'name',
         'surface',
-        'classe',
         'minutes',
-        "cluster"
+        "advers"
         ]]  
     Y['minutes_var']=np.random.normal(0,10,len(Y))
     Y['minutes']=Y['minutes']+Y['minutes_var']
@@ -485,7 +502,6 @@ def simul_win(X,cat):
         A['minutes_var']=np.random.normal(0,10,len(A))
         A['minutes']=A['minutes']+A['minutes_var']
         del A['minutes_var']
-        del A['cluster']
         del A['classe']
         del A['tourney_level']
         

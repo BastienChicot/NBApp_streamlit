@@ -4,6 +4,11 @@ Created on Fri Oct  1 10:05:11 2021
 
 @author: basti
 """
+import sys
+sys.path.append("/data/")
+sys.path.append("/models/")
+sys.path.append("/Services/")
+
 import streamlit as st
 from Fonctions import onglet_stat,onglet_prediction,onglet_simu
 import pandas as pd
