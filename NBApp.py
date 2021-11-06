@@ -71,6 +71,7 @@ if page_choice=="Turf":
     st.title("Probabilités d'arrivées pour le quinté")
     page_turf()
     st.text(" ATTENTION : "+"\n"+
-            "Les prédictions présentées ci-dessus sont dépendantes des informations disponibles ce matin" + "\n" +
+            "Les prédictions présentées ci-dessus sont dépendantes des informations disponibles lors" + "\n" +
+            "de la dernière mise à jour du site"+"\n"+
             "\n"+"Trier sur la colonne 'pred_qt_lin' pour obtenir un ordre d'arrivée en fonction de l'indice calculé")
     

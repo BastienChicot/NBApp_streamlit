@@ -42,7 +42,7 @@ def maj_model_tennis(cat):
     count = df_reg.groupby('name').count().reset_index()
     count = count[['name',"tourney_id"]]
     count = count.rename(columns={"tourney_id":"count"})
-    indexNames = count[ (count['count'] < 7.5)].index
+    indexNames = count[ (count['count'] < 5)].index
     count.drop(indexNames , inplace=True)
     
     df_reg = pd.merge(df_reg, count, on=['name'])
