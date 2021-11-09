@@ -75,13 +75,13 @@ def onglet_stat():
             
             st.header("Moyenne cette saison contre " +str(opp_option))
             col3,col4,col5,col6=st.columns(4)
-            col3.metric("Points par match",str(*met["PTS"]),
-                      str(*met["PTS_diff"]))
-            col4.metric("Passes par match",str(*met["AST"]),
-                      str(*met["AST_diff"]))
-            col5.metric("Rebonds par match",str(*met["TRB"]),
-                      str(*met["TRB_diff"]))
-            col6.metric("Minutes par match",str(*met["minutes"]))
+            col3.metric("Points par match",str(round(float(*met["PTS"]),2)),
+                      str(round(float(*met["PTS_diff"])),2))
+            col4.metric("Passes par match",str(round(float(*met["AST"]),2)),
+                      str(round(float(*met["AST_diff"])),2))
+            col5.metric("Rebonds par match",str(round(float(*met["TRB"]),2)),
+                      str(round(float(*met["TRB_diff"])),2))
+            col6.metric("Minutes par match",str(round(float(*met["minutes"])),2))
             
             st.header("Statistiques cumulées au cours de la carrière")
             st.text("DEF = contres + interception \nMIS = fautes + balles perdues" + "\n" + 
