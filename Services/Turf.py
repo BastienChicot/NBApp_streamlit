@@ -34,6 +34,6 @@ def page_turf():
     table=table.sort_values(by="N°")
     
     def highlight_rows(s):
-        return ['background-color: #689D71']*len(s) if s["Dans les 5"]=="> 75 %" else ['background-color: #7C7C7C']*len(s)
+        return ['background-color: #689D71']*len(s) if s["Dans les 5"]=="> 75 %" else ['background-color: #696969']*len(s)
     
     st.dataframe(table.style.apply(highlight_rows, axis=1))

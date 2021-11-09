@@ -39,13 +39,13 @@ def maj_model_tennis(cat):
     
     
     ### MODELE ACE
-    count = df_reg.groupby('name').count().reset_index()
-    count = count[['name',"tourney_id"]]
-    count = count.rename(columns={"tourney_id":"count"})
-    indexNames = count[ (count['count'] < 5)].index
-    count.drop(indexNames , inplace=True)
+    # count = df_reg.groupby('name').count().reset_index()
+    # count = count[['name',"tourney_id"]]
+    # count = count.rename(columns={"tourney_id":"count"})
+    # indexNames = count[ (count['count'] < 5)].index
+    # count.drop(indexNames , inplace=True)
     
-    df_reg = pd.merge(df_reg, count, on=['name'])
+    # df_reg = pd.merge(df_reg, count, on=['name'])
        
     df_w=df_reg[["tourney_id","win","ace",'age',"nb_set",
             'ht',

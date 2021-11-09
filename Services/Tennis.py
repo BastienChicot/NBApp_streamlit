@@ -67,7 +67,19 @@ def page_tennis():
             affich=col5.button("Afficher les statistiques")
             
             if affich :
-                graphic,vs=stat_by_surface(data,surf,adv)
+                graphic,vs,meten=stat_by_surface(data,surf,adv)
+                st.header("Moyenne en carrière contre " +str(adv))
+                st.text("par rapport à la moyenne en carrière")
+                col3,col4,col5,col6=st.columns(4)
+                col3.metric("Set par match",str(round(float(*meten["nb_set"]),2)),
+                          str(round(float(*meten["nb_set_diff_c"]),2)),delta_color="inverse")
+                col4.metric("Aces par match",str(round(float(*meten["ace"]),2)),
+                          str(round(float(*meten["ace_diff_c"]),2)))
+                col5.metric("Doubles fautes par match",str(round(float(*meten["df"]),2)),
+                          str(round(float(*meten["df_diff_c"]),2)),delta_color="inverse")
+                col6.metric("Minutes par match",str(round(float(*meten["minutes"]),2)),
+                            str(round(float(*meten["minutes_diff_c"]),2)),delta_color="inverse")
+                
                 st.subheader("Pourcentage de victoires")
                 st.text("pct_year = Pourcentage de victoires par an" + "\n" +
                         "pct = Pourcentage de victoires sur la surface sélectionée")
@@ -84,7 +96,20 @@ def page_tennis():
             affich=col5.button("Afficher les statistiques")
             
             if affich:
-                graphic,vs=stat_by_tournoi(data,tour,adv)
+                graphic,vs,meten=stat_by_tournoi(data,tour,adv)
+                
+                st.header("Moyenne en carrière contre " +str(adv))
+                st.text("par rapport à la moyenne en carrière")
+                col3,col4,col5,col6=st.columns(4)
+                col3.metric("Set par match",str(round(float(*meten["nb_set"]),2)),
+                          str(round(float(*meten["nb_set_diff_c"]),2)),delta_color="inverse")
+                col4.metric("Aces par match",str(round(float(*meten["ace"]),2)),
+                          str(round(float(*meten["ace_diff_c"]),2)))
+                col5.metric("Doubles fautes par match",str(round(float(*meten["df"]),2)),
+                          str(round(float(*meten["df_diff_c"]),2)),delta_color="inverse")
+                col6.metric("Minutes par match",str(round(float(*meten["minutes"]),2)),
+                            str(round(float(*meten["minutes_diff_c"]),2)),delta_color="inverse")
+                
                 st.subheader("Pourcentage de victoires")
                 st.text("pct_year = Pourcentage de victoires par an" + "\n" +
                         "pct = Pourcentage de victoires sur le tournoi sélectioné")
@@ -123,7 +148,20 @@ def page_wta():
             affich=col5.button("Afficher les statistiques")
             
             if affich :
-                graphic,vs=stat_by_surface(data,surf,adv)
+                graphic,vs,meten=stat_by_surface(data,surf,adv)
+                
+                st.header("Moyenne en carrière contre " +str(adv))
+                st.text("par rapport à la moyenne en carrière")
+                col3,col4,col5,col6=st.columns(4)
+                col3.metric("Set par match",str(round(float(*meten["nb_set"]),2)),
+                          str(round(float(*meten["nb_set_diff_c"]),2)),delta_color="inverse")
+                col4.metric("Aces par match",str(round(float(*meten["ace"]),2)),
+                          str(round(float(*meten["ace_diff_c"]),2)))
+                col5.metric("Doubles fautes par match",str(round(float(*meten["df"]),2)),
+                          str(round(float(*meten["df_diff_c"]),2)),delta_color="inverse")
+                col6.metric("Minutes par match",str(round(float(*meten["minutes"]),2)),
+                            str(round(float(*meten["minutes_diff_c"]),2)),delta_color="inverse")
+                
                 st.subheader("Pourcentage de victoires")
                 st.text("pct_year = Pourcentage de victoires par an" + "\n" +
                         "pct = Pourcentage de victoires sur la surface sélectionée")
@@ -140,7 +178,20 @@ def page_wta():
             affich=col5.button("Afficher les statistiques")
             
             if affich:
-                graphic,vs=stat_by_tournoi(data,tour,adv)
+                graphic,vs,meten=stat_by_tournoi(data,tour,adv)
+                
+                st.header("Moyenne en carrière contre " +str(adv))
+                st.text("par rapport à la moyenne en carrière")
+                col3,col4,col5,col6=st.columns(4)
+                col3.metric("Set par match",str(round(float(*meten["nb_set"]),2)),
+                          str(round(float(*meten["nb_set_diff_c"]),2)),delta_color="inverse")
+                col4.metric("Aces par match",str(round(float(*meten["ace"]),2)),
+                          str(round(float(*meten["ace_diff_c"]),2)))
+                col5.metric("Doubles fautes par match",str(round(float(*meten["df"]),2)),
+                          str(round(float(*meten["df_diff_c"]),2)),delta_color="inverse")
+                col6.metric("Minutes par match",str(round(float(*meten["minutes"]),2)),
+                            str(round(float(*meten["minutes_diff_c"]),2)),delta_color="inverse")
+                
                 st.subheader("Pourcentage de victoires")
                 st.text("pct_year = Pourcentage de victoires par an" + "\n" +
                         "pct = Pourcentage de victoires sur le tournoi sélectioné")
@@ -200,6 +251,7 @@ def stat_by_surface(data,surf,adv):
                                                                             , legend=alt.Legend(title="Pct de victoires")))
 
     vs = surface.loc[surface["advers"]==adv]
+    meten=vs.groupby(by="surface").mean()
     vs=vs.sort_values(by=['tourney_date'],ascending=False)
     vs=vs[["annee","tourney_name","surface","score","ace","df","result",
            "ace_diff_s","df_diff_s","minutes_diff_s","nb_set_diff_s"]]
@@ -208,7 +260,7 @@ def stat_by_surface(data,surf,adv):
                           "df_diff_s":"Différence nb df/moyenne en saison",
                           "minutes_diff_s":"Différence minutes de match/moyenne saison",
                           "nb_set_diff_s":"Différence nb de set/moyenne saison"})
-    return(graphic,vs)
+    return(graphic,vs,meten)
 
 def stat_by_tournoi(data,tour,adv):
     surface=data.loc[data["tourney_name"]==tour]
@@ -242,6 +294,7 @@ def stat_by_tournoi(data,tour,adv):
                                                                             , scale=alt.Scale(domain=domain, range=range_)
                                                                             , legend=alt.Legend(title="Pct de victoires")))
     vs = surface.loc[surface["advers"]==adv]
+    meten=vs.groupby(by="surface").mean()
     vs=vs.sort_values(by=['tourney_date'],ascending=False)
     vs=vs[["annee","tourney_name","surface","score","ace","df","result",
            "ace_diff_s","df_diff_s","minutes_diff_s","nb_set_diff_s"]]
@@ -251,7 +304,7 @@ def stat_by_tournoi(data,tour,adv):
                           "minutes_diff_s":"Différence minutes de match/moyenne saison",
                           "nb_set_diff_s":"Différence nb de set/moyenne saison"})
     
-    return(graphic,vs)
+    return(graphic,vs,meten)
 
 def page_predi(cat):
     col1 , col2, col3 = st.columns(3)

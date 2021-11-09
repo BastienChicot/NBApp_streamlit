@@ -48,6 +48,7 @@ def onglet_stat():
             y = code_base[2:3]
             code = ''.join(y)
             annee = '2021'
+            yeah=int(annee)
             url = 'https://www.basketball-reference.com/players/a/'+str(code)+'/gamelog/'+str(annee)
             col2.markdown(url, unsafe_allow_html=True)
         
@@ -64,10 +65,24 @@ def onglet_stat():
             last20 = stat_20matchs_splits(str(a))
             last20=last20.set_index('Date')
             against = stat_Opp_team(str(a),str(opp_option))
+            met=against.groupby(by="annee").mean()
+            met=met.reset_index()
+            met=met.loc[met["annee"]==yeah]
             against=against.set_index("Opp")
             team_rank=stat_teams(str(tm_option),str(opp_option))
             team_rank=team_rank.set_index("TEAM")
             col2.dataframe(name)
+            
+            st.header("Moyenne cette saison contre " +str(opp_option))
+            col3,col4,col5,col6=st.columns(4)
+            col3.metric("Points par match",str(*met["PTS"]),
+                      str(*met["PTS_diff"]))
+            col4.metric("Passes par match",str(*met["AST"]),
+                      str(*met["AST_diff"]))
+            col5.metric("Rebonds par match",str(*met["TRB"]),
+                      str(*met["TRB_diff"]))
+            col6.metric("Minutes par match",str(*met["minutes"]))
+            
             st.header("Statistiques cumulées au cours de la carrière")
             st.text("DEF = contres + interception \nMIS = fautes + balles perdues" + "\n" + 
                     "MP = minutes \nPRP = points + rebonds + passes décisives")
