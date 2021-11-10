@@ -4,7 +4,7 @@
 2;Golden State Warriors;2019;109.5;GSW
 3;Golden State Warriors;2020;113.8;GSW
 4;Golden State Warriors;2021;110.1;GSW
-5;Golden State Warriors;2022;98.6;GSW
+5;Golden State Warriors;2022;98.5;GSW
 6;San Antonio Spurs;2017;103.5;SAS
 7;San Antonio Spurs;2018;104.8;SAS
 8;San Antonio Spurs;2019;111.2;SAS
@@ -28,13 +28,13 @@
 26;Los Angeles Clippers;2019;111.5;LAC
 27;Los Angeles Clippers;2020;107.6;LAC
 28;Los Angeles Clippers;2021;111.2;LAC
-29;Los Angeles Clippers;2022;100.8;LAC
+29;Los Angeles Clippers;2022;102.1;LAC
 30;Utah Jazz;2017;105.3;UTA
 31;Utah Jazz;2018;103.9;UTA
 32;Utah Jazz;2019;105.7;UTA
 33;Utah Jazz;2020;109.9;UTA
 34;Utah Jazz;2021;108.3;UTA
-35;Utah Jazz;2022;103.9;UTA
+35;Utah Jazz;2022;104.0;UTA
 36;Cleveland Cavaliers;2017;110.3;CLE
 37;Cleveland Cavaliers;2018;111.9;CLE
 38;Cleveland Cavaliers;2019;117.6;CLE
@@ -100,19 +100,19 @@
 98;Milwaukee Bucks;2019;105.2;MIL
 99;Milwaukee Bucks;2020;102.9;MIL
 100;Milwaukee Bucks;2021;111.4;MIL
-101;Milwaukee Bucks;2022;107.4;MIL
+101;Milwaukee Bucks;2022;107.8;MIL
 102;Portland Trail Blazers;2017;110.8;POR
 103;Portland Trail Blazers;2018;106.4;POR
 104;Portland Trail Blazers;2019;110.5;POR
 105;Portland Trail Blazers;2020;114.8;POR
 106;Portland Trail Blazers;2021;116.0;POR
-107;Portland Trail Blazers;2022;107.5;POR
+107;Portland Trail Blazers;2022;108.8;POR
 108;Atlanta Hawks;2017;105.7;ATL
 109;Atlanta Hawks;2018;110.6;ATL
 110;Atlanta Hawks;2019;113.9;ATL
 111;Atlanta Hawks;2020;114.8;ATL
 112;Atlanta Hawks;2021;113.3;ATL
-113;Atlanta Hawks;2022;112.8;ATL
+113;Atlanta Hawks;2022;113.2;ATL
 114;Detroit Pistons;2017;107.1;DET
 115;Detroit Pistons;2018;107.3;DET
 116;Detroit Pistons;2019;109.2;DET
@@ -130,7 +130,7 @@
 128;New Orleans Pelicans;2019;112.6;NOP
 129;New Orleans Pelicans;2020;111.9;NOP
 130;New Orleans Pelicans;2021;113.8;NOP
-131;New Orleans Pelicans;2022;113.9;NOP
+131;New Orleans Pelicans;2022;113.8;NOP
 132;Dallas Mavericks;2017;108.8;DAL
 133;Dallas Mavericks;2018;109.5;DAL
 134;Dallas Mavericks;2019;110.7;DAL
@@ -142,7 +142,7 @@
 140;New York Knicks;2019;113.7;NYK
 141;New York Knicks;2020;113.0;NYK
 142;New York Knicks;2021;108.2;NYK
-143;New York Knicks;2022;110.2;NYK
+143;New York Knicks;2022;110.3;NYK
 144;Sacramento Kings;2017;111.3;SAC
 145;Sacramento Kings;2018;111.1;SAC
 146;Sacramento Kings;2019;111.5;SAC
@@ -160,7 +160,7 @@
 158;Philadelphia 76ers;2019;110.0;PHI
 159;Philadelphia 76ers;2020;109.0;PHI
 160;Philadelphia 76ers;2021;107.6;PHI
-161;Philadelphia 76ers;2022;107.8;PHI
+161;Philadelphia 76ers;2022;108.9;PHI
 162;Brooklyn Nets;2017;110.7;BRK
 163;Brooklyn Nets;2018;110.6;BRK
 164;Brooklyn Nets;2019;109.7;BRK
