@@ -22,19 +22,19 @@
 20;Toronto Raptors;2019;107.1;TOR
 21;Toronto Raptors;2020;105.0;TOR
 22;Toronto Raptors;2021;112.5;TOR
-23;Toronto Raptors;2022;105.8;TOR
+23;Toronto Raptors;2022;106.4;TOR
 24;Los Angeles Clippers;2017;108.2;LAC
 25;Los Angeles Clippers;2018;110.2;LAC
 26;Los Angeles Clippers;2019;111.5;LAC
 27;Los Angeles Clippers;2020;107.6;LAC
 28;Los Angeles Clippers;2021;111.2;LAC
-29;Los Angeles Clippers;2022;102.1;LAC
+29;Los Angeles Clippers;2022;102.8;LAC
 30;Utah Jazz;2017;105.3;UTA
 31;Utah Jazz;2018;103.9;UTA
 32;Utah Jazz;2019;105.7;UTA
 33;Utah Jazz;2020;109.9;UTA
 34;Utah Jazz;2021;108.3;UTA
-35;Utah Jazz;2022;104.0;UTA
+35;Utah Jazz;2022;104.8;UTA
 36;Cleveland Cavaliers;2017;110.3;CLE
 37;Cleveland Cavaliers;2018;111.9;CLE
 38;Cleveland Cavaliers;2019;117.6;CLE
@@ -58,7 +58,7 @@
 56;Miami Heat;2019;107.6;MIA
 57;Miami Heat;2020;109.5;MIA
 58;Miami Heat;2021;111.2;MIA
-59;Miami Heat;2022;104.2;MIA
+59;Miami Heat;2022;105.0;MIA
 60;Oklahoma City Thunder;2017;107.5;OKC
 61;Oklahoma City Thunder;2018;107.2;OKC
 62;Oklahoma City Thunder;2019;107.0;OKC
@@ -70,7 +70,7 @@
 68;Memphis Grizzlies;2019;108.8;MEM
 69;Memphis Grizzlies;2020;110.3;MEM
 70;Memphis Grizzlies;2021;111.0;MEM
-71;Memphis Grizzlies;2022;112.9;MEM
+71;Memphis Grizzlies;2022;113.0;MEM
 72;Denver Nuggets;2017;112.7;DEN
 73;Denver Nuggets;2018;111.0;DEN
 74;Denver Nuggets;2019;108.9;DEN
@@ -94,7 +94,7 @@
 92;Indiana Pacers;2019;106.5;IND
 93;Indiana Pacers;2020;108.0;IND
 94;Indiana Pacers;2021;112.4;IND
-95;Indiana Pacers;2022;108.7;IND
+95;Indiana Pacers;2022;108.2;IND
 96;Milwaukee Bucks;2017;109.3;MIL
 97;Milwaukee Bucks;2018;110.1;MIL
 98;Milwaukee Bucks;2019;105.2;MIL
@@ -160,7 +160,7 @@
 158;Philadelphia 76ers;2019;110.0;PHI
 159;Philadelphia 76ers;2020;109.0;PHI
 160;Philadelphia 76ers;2021;107.6;PHI
-161;Philadelphia 76ers;2022;108.9;PHI
+161;Philadelphia 76ers;2022;109.7;PHI
 162;Brooklyn Nets;2017;110.7;BRK
 163;Brooklyn Nets;2018;110.6;BRK
 164;Brooklyn Nets;2019;109.7;BRK
