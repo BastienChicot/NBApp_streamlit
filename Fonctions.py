@@ -4,10 +4,10 @@ Created on Thu Feb 25 17:02:37 2021
 
 @author: basti
 """
-import sys
-sys.path.append("/data/")
-sys.path.append("/models/")
-sys.path.append("/Services/")
+# import sys
+# sys.path.append("/data/")
+# sys.path.append("/models/")
+# sys.path.append("/Services/")
 
 import pandas as pd
 import numpy as np
