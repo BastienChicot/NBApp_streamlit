@@ -4,7 +4,7 @@
 2;Golden State Warriors;2019;109.5;GSW
 3;Golden State Warriors;2020;113.8;GSW
 4;Golden State Warriors;2021;110.1;GSW
-5;Golden State Warriors;2022;100.1;GSW
+5;Golden State Warriors;2022;100.4;GSW
 6;San Antonio Spurs;2017;103.5;SAS
 7;San Antonio Spurs;2018;104.8;SAS
 8;San Antonio Spurs;2019;111.2;SAS
@@ -22,7 +22,7 @@
 20;Toronto Raptors;2019;107.1;TOR
 21;Toronto Raptors;2020;105.0;TOR
 22;Toronto Raptors;2021;112.5;TOR
-23;Toronto Raptors;2022;111.2;TOR
+23;Toronto Raptors;2022;110.7;TOR
 24;Los Angeles Clippers;2017;108.2;LAC
 25;Los Angeles Clippers;2018;110.2;LAC
 26;Los Angeles Clippers;2019;111.5;LAC
@@ -70,7 +70,7 @@
 68;Memphis Grizzlies;2019;108.8;MEM
 69;Memphis Grizzlies;2020;110.3;MEM
 70;Memphis Grizzlies;2021;111.0;MEM
-71;Memphis Grizzlies;2022;115.2;MEM
+71;Memphis Grizzlies;2022;114.2;MEM
 72;Denver Nuggets;2017;112.7;DEN
 73;Denver Nuggets;2018;111.0;DEN
 74;Denver Nuggets;2019;108.9;DEN
@@ -106,7 +106,7 @@
 104;Portland Trail Blazers;2019;110.5;POR
 105;Portland Trail Blazers;2020;114.8;POR
 106;Portland Trail Blazers;2021;116.0;POR
-107;Portland Trail Blazers;2022;113.5;POR
+107;Portland Trail Blazers;2022;112.5;POR
 108;Atlanta Hawks;2017;105.7;ATL
 109;Atlanta Hawks;2018;110.6;ATL
 110;Atlanta Hawks;2019;113.9;ATL
@@ -142,19 +142,19 @@
 140;New York Knicks;2019;113.7;NYK
 141;New York Knicks;2020;113.0;NYK
 142;New York Knicks;2021;108.2;NYK
-143;New York Knicks;2022;108.2;NYK
+143;New York Knicks;2022;108.7;NYK
 144;Sacramento Kings;2017;111.3;SAC
 145;Sacramento Kings;2018;111.1;SAC
 146;Sacramento Kings;2019;111.5;SAC
 147;Sacramento Kings;2020;112.2;SAC
 148;Sacramento Kings;2021;117.2;SAC
-149;Sacramento Kings;2022;111.7;SAC
+149;Sacramento Kings;2022;111.9;SAC
 150;Phoenix Suns;2017;112.2;PHO
 151;Phoenix Suns;2018;112.8;PHO
 152;Phoenix Suns;2019;115.1;PHO
 153;Phoenix Suns;2020;111.4;PHO
 154;Phoenix Suns;2021;111.3;PHO
-155;Phoenix Suns;2022;104.2;PHO
+155;Phoenix Suns;2022;104.0;PHO
 156;Philadelphia 76ers;2017;108.9;PHI
 157;Philadelphia 76ers;2018;105.0;PHI
 158;Philadelphia 76ers;2019;110.0;PHI
@@ -166,7 +166,7 @@
 164;Brooklyn Nets;2019;109.7;BRK
 165;Brooklyn Nets;2020;109.5;BRK
 166;Brooklyn Nets;2021;113.8;BRK
-167;Brooklyn Nets;2022;106.0;BRK
+167;Brooklyn Nets;2022;106.5;BRK
 168;Orlando Magic;2017;110.5;ORL
 169;Orlando Magic;2018;110.1;ORL
 170;Orlando Magic;2019;108.1;ORL
@@ -178,4 +178,4 @@
 176;Los Angeles Lakers;2019;109.5;LAL
 177;Los Angeles Lakers;2020;106.3;LAL
 178;Los Angeles Lakers;2021;107.1;LAL
-179;Los Angeles Lakers;2022;108.8;LAL
+179;Los Angeles Lakers;2022;108.1;LAL
