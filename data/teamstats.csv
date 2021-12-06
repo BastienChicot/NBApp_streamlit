@@ -16,13 +16,13 @@
 14;Houston Rockets;2019;110.7;HOU
 15;Houston Rockets;2020;110.1;HOU
 16;Houston Rockets;2021;114.9;HOU
-17;Houston Rockets;2022;109.2;HOU
+17;Houston Rockets;2022;109.6;HOU
 18;Toronto Raptors;2017;107.8;TOR
 19;Toronto Raptors;2018;105.9;TOR
 20;Toronto Raptors;2019;107.1;TOR
 21;Toronto Raptors;2020;105.0;TOR
 22;Toronto Raptors;2021;112.5;TOR
-23;Toronto Raptors;2022;110.3;TOR
+23;Toronto Raptors;2022;109.9;TOR
 24;Los Angeles Clippers;2017;108.2;LAC
 25;Los Angeles Clippers;2018;110.2;LAC
 26;Los Angeles Clippers;2019;111.5;LAC
@@ -34,13 +34,13 @@
 32;Utah Jazz;2019;105.7;UTA
 33;Utah Jazz;2020;109.9;UTA
 34;Utah Jazz;2021;108.3;UTA
-35;Utah Jazz;2022;106.8;UTA
+35;Utah Jazz;2022;107.1;UTA
 36;Cleveland Cavaliers;2017;110.3;CLE
 37;Cleveland Cavaliers;2018;111.9;CLE
 38;Cleveland Cavaliers;2019;117.6;CLE
 39;Cleveland Cavaliers;2020;115.4;CLE
 40;Cleveland Cavaliers;2021;114.4;CLE
-41;Cleveland Cavaliers;2022;105.0;CLE
+41;Cleveland Cavaliers;2022;105.5;CLE
 42;Boston Celtics;2017;108.4;BOS
 43;Boston Celtics;2018;103.9;BOS
 44;Boston Celtics;2019;107.8;BOS
@@ -52,7 +52,7 @@
 50;Washington Wizards;2019;113.9;WAS
 51;Washington Wizards;2020;115.5;WAS
 52;Washington Wizards;2021;113.0;WAS
-53;Washington Wizards;2022;108.2;WAS
+53;Washington Wizards;2022;108.4;WAS
 54;Miami Heat;2017;106.7;MIA
 55;Miami Heat;2018;106.3;MIA
 56;Miami Heat;2019;107.6;MIA
@@ -88,7 +88,7 @@
 86;Charlotte Hornets;2019;112.5;CHO
 87;Charlotte Hornets;2020;113.3;CHO
 88;Charlotte Hornets;2021;112.8;CHO
-89;Charlotte Hornets;2022;112.5;CHO
+89;Charlotte Hornets;2022;113.1;CHO
 90;Indiana Pacers;2017;108.8;IND
 91;Indiana Pacers;2018;108.1;IND
 92;Indiana Pacers;2019;106.5;IND
@@ -112,7 +112,7 @@
 110;Atlanta Hawks;2019;113.9;ATL
 111;Atlanta Hawks;2020;114.8;ATL
 112;Atlanta Hawks;2021;113.3;ATL
-113;Atlanta Hawks;2022;110.7;ATL
+113;Atlanta Hawks;2022;111.6;ATL
 114;Detroit Pistons;2017;107.1;DET
 115;Detroit Pistons;2018;107.3;DET
 116;Detroit Pistons;2019;109.2;DET
@@ -130,7 +130,7 @@
 128;New Orleans Pelicans;2019;112.6;NOP
 129;New Orleans Pelicans;2020;111.9;NOP
 130;New Orleans Pelicans;2021;113.8;NOP
-131;New Orleans Pelicans;2022;112.8;NOP
+131;New Orleans Pelicans;2022;113.4;NOP
 132;Dallas Mavericks;2017;108.8;DAL
 133;Dallas Mavericks;2018;109.5;DAL
 134;Dallas Mavericks;2019;110.7;DAL
