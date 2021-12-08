@@ -10,7 +10,7 @@
 8;San Antonio Spurs;2019;111.2;SAS
 9;San Antonio Spurs;2020;113.5;SAS
 10;San Antonio Spurs;2021;112.8;SAS
-11;San Antonio Spurs;2022;107.0;SAS
+11;San Antonio Spurs;2022;107.9;SAS
 12;Houston Rockets;2017;109.0;HOU
 13;Houston Rockets;2018;106.1;HOU
 14;Houston Rockets;2019;110.7;HOU
@@ -46,7 +46,7 @@
 44;Boston Celtics;2019;107.8;BOS
 45;Boston Celtics;2020;107.0;BOS
 46;Boston Celtics;2021;112.5;BOS
-47;Boston Celtics;2022;107.2;BOS
+47;Boston Celtics;2022;107.6;BOS
 48;Washington Wizards;2017;109.3;WAS
 49;Washington Wizards;2018;108.7;WAS
 50;Washington Wizards;2019;113.9;WAS
@@ -136,13 +136,13 @@
 134;Dallas Mavericks;2019;110.7;DAL
 135;Dallas Mavericks;2020;111.7;DAL
 136;Dallas Mavericks;2021;113.0;DAL
-137;Dallas Mavericks;2022;109.4;DAL
+137;Dallas Mavericks;2022;109.5;DAL
 138;New York Knicks;2017;111.5;NYK
 139;New York Knicks;2018;110.7;NYK
 140;New York Knicks;2019;113.7;NYK
 141;New York Knicks;2020;113.0;NYK
 142;New York Knicks;2021;108.2;NYK
-143;New York Knicks;2022;110.0;NYK
+143;New York Knicks;2022;110.3;NYK
 144;Sacramento Kings;2017;111.3;SAC
 145;Sacramento Kings;2018;111.1;SAC
 146;Sacramento Kings;2019;111.5;SAC
@@ -166,7 +166,7 @@
 164;Brooklyn Nets;2019;109.7;BRK
 165;Brooklyn Nets;2020;109.5;BRK
 166;Brooklyn Nets;2021;113.8;BRK
-167;Brooklyn Nets;2022;106.5;BRK
+167;Brooklyn Nets;2022;106.6;BRK
 168;Orlando Magic;2017;110.5;ORL
 169;Orlando Magic;2018;110.1;ORL
 170;Orlando Magic;2019;108.1;ORL
@@ -178,4 +178,4 @@
 176;Los Angeles Lakers;2019;109.5;LAL
 177;Los Angeles Lakers;2020;106.3;LAL
 178;Los Angeles Lakers;2021;107.1;LAL
-179;Los Angeles Lakers;2022;108.8;LAL
+179;Los Angeles Lakers;2022;108.5;LAL
