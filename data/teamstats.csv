@@ -4,19 +4,19 @@
 2;Golden State Warriors;2019;109.5;GSW
 3;Golden State Warriors;2020;113.8;GSW
 4;Golden State Warriors;2021;110.1;GSW
-5;Golden State Warriors;2022;102.1;GSW
+5;Golden State Warriors;2022;102.5;GSW
 6;San Antonio Spurs;2017;103.5;SAS
 7;San Antonio Spurs;2018;104.8;SAS
 8;San Antonio Spurs;2019;111.2;SAS
 9;San Antonio Spurs;2020;113.5;SAS
 10;San Antonio Spurs;2021;112.8;SAS
-11;San Antonio Spurs;2022;109.4;SAS
+11;San Antonio Spurs;2022;109.3;SAS
 12;Houston Rockets;2017;109.0;HOU
 13;Houston Rockets;2018;106.1;HOU
 14;Houston Rockets;2019;110.7;HOU
 15;Houston Rockets;2020;110.1;HOU
 16;Houston Rockets;2021;114.9;HOU
-17;Houston Rockets;2022;114.4;HOU
+17;Houston Rockets;2022;114.7;HOU
 18;Toronto Raptors;2017;107.8;TOR
 19;Toronto Raptors;2018;105.9;TOR
 20;Toronto Raptors;2019;107.1;TOR
@@ -28,13 +28,13 @@
 26;Los Angeles Clippers;2019;111.5;LAC
 27;Los Angeles Clippers;2020;107.6;LAC
 28;Los Angeles Clippers;2021;111.2;LAC
-29;Los Angeles Clippers;2022;106.2;LAC
+29;Los Angeles Clippers;2022;106.4;LAC
 30;Utah Jazz;2017;105.3;UTA
 31;Utah Jazz;2018;103.9;UTA
 32;Utah Jazz;2019;105.7;UTA
 33;Utah Jazz;2020;109.9;UTA
 34;Utah Jazz;2021;108.3;UTA
-35;Utah Jazz;2022;106.9;UTA
+35;Utah Jazz;2022;107.3;UTA
 36;Cleveland Cavaliers;2017;110.3;CLE
 37;Cleveland Cavaliers;2018;111.9;CLE
 38;Cleveland Cavaliers;2019;117.6;CLE
@@ -52,7 +52,7 @@
 50;Washington Wizards;2019;113.9;WAS
 51;Washington Wizards;2020;115.5;WAS
 52;Washington Wizards;2021;113.0;WAS
-53;Washington Wizards;2022;111.3;WAS
+53;Washington Wizards;2022;111.5;WAS
 54;Miami Heat;2017;106.7;MIA
 55;Miami Heat;2018;106.3;MIA
 56;Miami Heat;2019;107.6;MIA
@@ -76,13 +76,13 @@
 74;Denver Nuggets;2019;108.9;DEN
 75;Denver Nuggets;2020;111.0;DEN
 76;Denver Nuggets;2021;112.1;DEN
-77;Denver Nuggets;2022;109.0;DEN
+77;Denver Nuggets;2022;109.1;DEN
 78;Chicago Bulls;2017;107.0;CHI
 79;Chicago Bulls;2018;110.9;CHI
 80;Chicago Bulls;2019;113.2;CHI
 81;Chicago Bulls;2020;109.8;CHI
 82;Chicago Bulls;2021;112.0;CHI
-83;Chicago Bulls;2022;108.6;CHI
+83;Chicago Bulls;2022;108.8;CHI
 84;Charlotte Hornets;2017;108.6;CHO
 85;Charlotte Hornets;2018;109.1;CHO
 86;Charlotte Hornets;2019;112.5;CHO
@@ -100,7 +100,7 @@
 98;Milwaukee Bucks;2019;105.2;MIL
 99;Milwaukee Bucks;2020;102.9;MIL
 100;Milwaukee Bucks;2021;111.4;MIL
-101;Milwaukee Bucks;2022;108.1;MIL
+101;Milwaukee Bucks;2022;108.0;MIL
 102;Portland Trail Blazers;2017;110.8;POR
 103;Portland Trail Blazers;2018;106.4;POR
 104;Portland Trail Blazers;2019;110.5;POR
@@ -118,7 +118,7 @@
 116;Detroit Pistons;2019;109.2;DET
 117;Detroit Pistons;2020;112.7;DET
 118;Detroit Pistons;2021;112.5;DET
-119;Detroit Pistons;2022;110.9;DET
+119;Detroit Pistons;2022;110.6;DET
 120;Minnesota Timberwolves;2017;112.0;MIN
 121;Minnesota Timberwolves;2018;111.1;MIN
 122;Minnesota Timberwolves;2019;112.9;MIN
@@ -130,7 +130,7 @@
 128;New Orleans Pelicans;2019;112.6;NOP
 129;New Orleans Pelicans;2020;111.9;NOP
 130;New Orleans Pelicans;2021;113.8;NOP
-131;New Orleans Pelicans;2022;112.3;NOP
+131;New Orleans Pelicans;2022;112.7;NOP
 132;Dallas Mavericks;2017;108.8;DAL
 133;Dallas Mavericks;2018;109.5;DAL
 134;Dallas Mavericks;2019;110.7;DAL
@@ -166,7 +166,7 @@
 164;Brooklyn Nets;2019;109.7;BRK
 165;Brooklyn Nets;2020;109.5;BRK
 166;Brooklyn Nets;2021;113.8;BRK
-167;Brooklyn Nets;2022;106.9;BRK
+167;Brooklyn Nets;2022;107.2;BRK
 168;Orlando Magic;2017;110.5;ORL
 169;Orlando Magic;2018;110.1;ORL
 170;Orlando Magic;2019;108.1;ORL
