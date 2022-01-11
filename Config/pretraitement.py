@@ -39,7 +39,7 @@ from pretraitement_tennis import create_fichier, nettoyage
 from maj_modeles_tennis import maj_model_tennis
 
 annee=2022
-year=2021
+year=2022
 
 ##0. Teamstats
 print("Récupération des stats d'équipes")
