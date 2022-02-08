@@ -22,7 +22,7 @@
 20;Toronto Raptors;2019;107.1;TOR
 21;Toronto Raptors;2020;105.0;TOR
 22;Toronto Raptors;2021;112.5;TOR
-23;Toronto Raptors;2022;110.5;TOR
+23;Toronto Raptors;2022;110.3;TOR
 24;Los Angeles Clippers;2017;108.2;LAC
 25;Los Angeles Clippers;2018;110.2;LAC
 26;Los Angeles Clippers;2019;111.5;LAC
@@ -34,7 +34,7 @@
 32;Utah Jazz;2019;105.7;UTA
 33;Utah Jazz;2020;109.9;UTA
 34;Utah Jazz;2021;108.3;UTA
-35;Utah Jazz;2022;109.9;UTA
+35;Utah Jazz;2022;109.8;UTA
 36;Cleveland Cavaliers;2017;110.3;CLE
 37;Cleveland Cavaliers;2018;111.9;CLE
 38;Cleveland Cavaliers;2019;117.6;CLE
@@ -52,19 +52,19 @@
 50;Washington Wizards;2019;113.9;WAS
 51;Washington Wizards;2020;115.5;WAS
 52;Washington Wizards;2021;113.0;WAS
-53;Washington Wizards;2022;112.2;WAS
+53;Washington Wizards;2022;112.4;WAS
 54;Miami Heat;2017;106.7;MIA
 55;Miami Heat;2018;106.3;MIA
 56;Miami Heat;2019;107.6;MIA
 57;Miami Heat;2020;109.5;MIA
 58;Miami Heat;2021;111.2;MIA
-59;Miami Heat;2022;108.2;MIA
+59;Miami Heat;2022;108.1;MIA
 60;Oklahoma City Thunder;2017;107.5;OKC
 61;Oklahoma City Thunder;2018;107.2;OKC
 62;Oklahoma City Thunder;2019;107.0;OKC
 63;Oklahoma City Thunder;2020;108.8;OKC
 64;Oklahoma City Thunder;2021;114.0;OKC
-65;Oklahoma City Thunder;2022;109.4;OKC
+65;Oklahoma City Thunder;2022;109.5;OKC
 66;Memphis Grizzlies;2017;107.1;MEM
 67;Memphis Grizzlies;2018;111.0;MEM
 68;Memphis Grizzlies;2019;108.8;MEM
@@ -82,7 +82,7 @@
 80;Chicago Bulls;2019;113.2;CHI
 81;Chicago Bulls;2020;109.8;CHI
 82;Chicago Bulls;2021;112.0;CHI
-83;Chicago Bulls;2022;111.5;CHI
+83;Chicago Bulls;2022;111.9;CHI
 84;Charlotte Hornets;2017;108.6;CHO
 85;Charlotte Hornets;2018;109.1;CHO
 86;Charlotte Hornets;2019;112.5;CHO
@@ -142,7 +142,7 @@
 140;New York Knicks;2019;113.7;NYK
 141;New York Knicks;2020;113.0;NYK
 142;New York Knicks;2021;108.2;NYK
-143;New York Knicks;2022;109.6;NYK
+143;New York Knicks;2022;109.7;NYK
 144;Sacramento Kings;2017;111.3;SAC
 145;Sacramento Kings;2018;111.1;SAC
 146;Sacramento Kings;2019;111.5;SAC
@@ -154,7 +154,7 @@
 152;Phoenix Suns;2019;115.1;PHO
 153;Phoenix Suns;2020;111.4;PHO
 154;Phoenix Suns;2021;111.3;PHO
-155;Phoenix Suns;2022;105.6;PHO
+155;Phoenix Suns;2022;106.0;PHO
 156;Philadelphia 76ers;2017;108.9;PHI
 157;Philadelphia 76ers;2018;105.0;PHI
 158;Philadelphia 76ers;2019;110.0;PHI
