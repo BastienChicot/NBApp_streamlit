@@ -1,184 +1,184 @@
 ;Key;annee;cluster
-0;Alvin Gentry;2020;2
-1;Alvin Gentry;2022;2
-2;Billy Donovan;2020;4
-3;Billy Donovan;2021;1
-4;Billy Donovan;2022;1
+0;Alvin Gentry;2020;3
+1;Alvin Gentry;2022;1
+2;Billy Donovan;2020;0
+3;Billy Donovan;2021;4
+4;Billy Donovan;2022;4
 5;Brad Stevens;2020;0
-6;Brad Stevens;2021;0
+6;Brad Stevens;2021;2
 7;Brett Brown;2020;0
-8;Chauncey Billups;2022;1
-9;Chris Finch;2021;2
-10;Chris Finch;2022;1
+8;Chauncey Billups;2022;4
+9;Chris Finch;2021;1
+10;Chris Finch;2022;4
 11;Doc Rivers;2020;0
-12;Doc Rivers;2021;1
-13;Doc Rivers;2022;1
+12;Doc Rivers;2021;4
+13;Doc Rivers;2022;4
 14;Dwane Casey;2020;0
-15;Dwane Casey;2021;1
-16;Dwane Casey;2022;1
+15;Dwane Casey;2021;4
+16;Dwane Casey;2022;4
 17;Erik Spoelstra;2020;0
-18;Erik Spoelstra;2021;3
-19;Erik Spoelstra;2022;3
+18;Erik Spoelstra;2021;2
+19;Erik Spoelstra;2022;2
 20;Frank Vogel;2020;0
-21;Frank Vogel;2021;3
+21;Frank Vogel;2021;2
 22;Frank Vogel;2022;1
-23;Gregg Popovich;2020;4
-24;Gregg Popovich;2021;1
-25;Gregg Popovich;2022;2
-26;Ime Udoka;2022;3
-27;J.B. Bickerstaff;2020;0
-28;J.B. Bickerstaff;2021;1
-29;J.B. Bickerstaff;2022;3
-30;Jacque Vaughn;2020;4
-31;Jamahl Mosley;2022;1
+23;Gregg Popovich;2020;0
+24;Gregg Popovich;2021;4
+25;Gregg Popovich;2022;1
+26;Ime Udoka;2022;2
+27;J.B. Bickerstaff;2020;1
+28;J.B. Bickerstaff;2021;4
+29;J.B. Bickerstaff;2022;2
+30;Jacque Vaughn;2020;3
+31;Jamahl Mosley;2022;4
 32;James Borrego;2020;0
-33;James Borrego;2021;1
-34;James Borrego;2022;1
-35;Jason Kidd;2022;3
-36;Jim Boylen;2020;0
-37;Lloyd Pierce;2020;2
-38;Luke Walton;2020;1
-39;Luke Walton;2021;2
-40;Mark Daigneault;2021;2
-41;Mark Daigneault;2022;1
+33;James Borrego;2021;4
+34;James Borrego;2022;4
+35;Jason Kidd;2022;2
+36;Jim Boylen;2020;4
+37;Lloyd Pierce;2020;3
+38;Luke Walton;2020;4
+39;Luke Walton;2021;1
+40;Mark Daigneault;2021;1
+41;Mark Daigneault;2022;4
 42;Michael Malone;2020;0
-43;Michael Malone;2021;3
-44;Michael Malone;2022;3
-45;Mike Budenholzer;2020;4
-46;Mike Budenholzer;2021;2
-47;Mike Budenholzer;2022;1
-48;Mike D'Antoni;2020;4
+43;Michael Malone;2021;2
+44;Michael Malone;2022;2
+45;Mike Budenholzer;2020;0
+46;Mike Budenholzer;2021;1
+47;Mike Budenholzer;2022;4
+48;Mike D'Antoni;2020;3
 49;Mike Miller;2020;0
-50;Monty Williams;2020;4
-51;Monty Williams;2021;3
-52;Monty Williams;2022;1
-53;Nate Bjorkgren;2021;2
-54;Nate McMillan;2020;4
-55;Nate McMillan;2021;1
-56;Nate McMillan;2022;1
+50;Monty Williams;2020;0
+51;Monty Williams;2021;2
+52;Monty Williams;2022;4
+53;Nate Bjorkgren;2021;1
+54;Nate McMillan;2020;0
+55;Nate McMillan;2021;4
+56;Nate McMillan;2022;4
 57;Nick Nurse;2020;0
-58;Nick Nurse;2021;1
-59;Nick Nurse;2022;1
-60;Quin Snyder;2020;4
-61;Quin Snyder;2021;3
-62;Quin Snyder;2022;3
-63;Rick Carlisle;2020;4
-64;Rick Carlisle;2021;1
-65;Rick Carlisle;2022;1
-66;Ryan Saunders;2020;4
-67;Scott Brooks;2020;2
-68;Scott Brooks;2021;2
+58;Nick Nurse;2021;4
+59;Nick Nurse;2022;4
+60;Quin Snyder;2020;0
+61;Quin Snyder;2021;2
+62;Quin Snyder;2022;2
+63;Rick Carlisle;2020;0
+64;Rick Carlisle;2021;4
+65;Rick Carlisle;2022;4
+66;Ryan Saunders;2020;3
+67;Scott Brooks;2020;3
+68;Scott Brooks;2021;3
 69;Stan Van Gundy;2021;1
-70;Stephen Silas;2021;2
-71;Stephen Silas;2022;2
+70;Stephen Silas;2021;1
+71;Stephen Silas;2022;1
 72;Steve Clifford;2020;0
-73;Steve Clifford;2021;1
+73;Steve Clifford;2021;4
 74;Steve Kerr;2020;1
-75;Steve Kerr;2021;1
-76;Steve Kerr;2022;3
+75;Steve Kerr;2021;4
+76;Steve Kerr;2022;2
 77;Steve Nash;2021;0
-78;Steve Nash;2022;1
-79;Taylor Jenkins;2020;4
-80;Taylor Jenkins;2021;1
-81;Taylor Jenkins;2022;3
-82;Terry Stotts;2020;2
-83;Terry Stotts;2021;1
-84;Tom Thibodeau;2021;3
-85;Tom Thibodeau;2022;1
-86;Tyronn Lue;2021;3
-87;Tyronn Lue;2022;1
-88;Wes Unseld;2022;1
-89;Willie Green;2022;3
+78;Steve Nash;2022;4
+79;Taylor Jenkins;2020;0
+80;Taylor Jenkins;2021;4
+81;Taylor Jenkins;2022;2
+82;Terry Stotts;2020;3
+83;Terry Stotts;2021;4
+84;Tom Thibodeau;2021;2
+85;Tom Thibodeau;2022;4
+86;Tyronn Lue;2021;2
+87;Tyronn Lue;2022;4
+88;Wes Unseld;2022;4
+89;Willie Green;2022;2
 90;ATL;2020;1
-91;ATL;2021;0
-92;ATL;2022;0
+91;ATL;2021;2
+92;ATL;2022;2
 93;BOS;2020;3
-94;BOS;2021;2
-95;BOS;2022;2
+94;BOS;2021;0
+95;BOS;2022;0
 96;BRK;2020;1
 97;BRK;2021;3
 98;BRK;2022;4
-99;CHI;2020;0
-100;CHI;2021;0
-101;CHI;2022;0
+99;CHI;2020;2
+100;CHI;2021;2
+101;CHI;2022;2
 102;CHO;2020;3
-103;CHO;2021;0
-104;CHO;2022;0
+103;CHO;2021;2
+104;CHO;2022;2
 105;CLE;2020;4
-106;CLE;2021;0
-107;CLE;2022;2
+106;CLE;2021;2
+107;CLE;2022;0
 108;DAL;2020;3
-109;DAL;2021;0
-110;DAL;2022;2
+109;DAL;2021;2
+110;DAL;2022;0
 111;DEN;2020;3
-112;DEN;2021;2
-113;DEN;2022;2
+112;DEN;2021;0
+113;DEN;2022;0
 114;DET;2020;3
-115;DET;2021;0
-116;DET;2022;0
+115;DET;2021;2
+116;DET;2022;2
 117;GSW;2020;4
-118;GSW;2021;0
-119;GSW;2022;2
+118;GSW;2021;2
+119;GSW;2022;0
 120;HOU;2020;1
 121;HOU;2021;4
 122;HOU;2022;4
 123;IND;2020;3
 124;IND;2021;4
-125;IND;2022;0
+125;IND;2022;2
 126;LAC;2020;3
-127;LAC;2021;2
-128;LAC;2022;0
+127;LAC;2021;0
+128;LAC;2022;2
 129;LAL;2020;3
-130;LAL;2021;2
+130;LAL;2021;0
 131;LAL;2022;4
 132;MEM;2020;3
-133;MEM;2021;0
-134;MEM;2022;2
+133;MEM;2021;2
+134;MEM;2022;0
 135;MIA;2020;3
-136;MIA;2021;2
-137;MIA;2022;2
+136;MIA;2021;0
+137;MIA;2022;0
 138;MIL;2020;3
 139;MIL;2021;4
-140;MIL;2022;0
+140;MIL;2022;2
 141;MIN;2020;1
 142;MIN;2021;4
-143;MIN;2022;0
+143;MIN;2022;2
 144;NOP;2020;1
 145;NOP;2021;4
-146;NOP;2022;2
+146;NOP;2022;0
 147;NYK;2020;3
-148;NYK;2021;2
-149;NYK;2022;0
+148;NYK;2021;0
+149;NYK;2022;2
 150;OKC;2020;3
 151;OKC;2021;4
-152;OKC;2022;0
+152;OKC;2022;2
 153;ORL;2020;3
-154;ORL;2021;0
-155;ORL;2022;0
+154;ORL;2021;2
+155;ORL;2022;2
 156;PHI;2020;3
-157;PHI;2021;0
-158;PHI;2022;0
+157;PHI;2021;2
+158;PHI;2022;2
 159;PHO;2020;3
-160;PHO;2021;2
-161;PHO;2022;0
+160;PHO;2021;0
+161;PHO;2022;2
 162;POR;2020;1
-163;POR;2021;0
-164;POR;2022;0
-165;SAC;2020;0
+163;POR;2021;2
+164;POR;2022;2
+165;SAC;2020;2
 166;SAC;2021;4
 167;SAC;2022;4
 168;SAS;2020;1
-169;SAS;2021;0
+169;SAS;2021;4
 170;SAS;2022;4
 171;TOR;2020;3
-172;TOR;2021;0
-173;TOR;2022;0
+172;TOR;2021;2
+173;TOR;2022;2
 174;UTA;2020;3
-175;UTA;2021;2
-176;UTA;2022;2
+175;UTA;2021;0
+176;UTA;2022;0
 177;WAS;2020;1
 178;WAS;2021;1
-179;WAS;2022;0
+179;WAS;2022;2
 180;Aaron Gordon;2020;0
 181;Aaron Gordon;2021;0
 182;Aaron Gordon;2022;2
@@ -449,7 +449,7 @@
 447;Dean Wade;2022;2
 448;Deandre Ayton;2020;0
 449;Deandre Ayton;2021;0
-450;Deandre Ayton;2022;2
+450;Deandre Ayton;2022;0
 451;Dejounte Murray;2020;4
 452;Dejounte Murray;2021;4
 453;Dejounte Murray;2022;4
