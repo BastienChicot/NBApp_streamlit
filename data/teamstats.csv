@@ -16,7 +16,7 @@
 14;Houston Rockets;2019;110.7;HOU
 15;Houston Rockets;2020;110.1;HOU
 16;Houston Rockets;2021;114.9;HOU
-17;Houston Rockets;2022;116.5;HOU
+17;Houston Rockets;2022;116.9;HOU
 18;Toronto Raptors;2017;107.8;TOR
 19;Toronto Raptors;2018;105.9;TOR
 20;Toronto Raptors;2019;107.1;TOR
@@ -52,13 +52,13 @@
 50;Washington Wizards;2019;113.9;WAS
 51;Washington Wizards;2020;115.5;WAS
 52;Washington Wizards;2021;113.0;WAS
-53;Washington Wizards;2022;112.7;WAS
+53;Washington Wizards;2022;112.6;WAS
 54;Miami Heat;2017;106.7;MIA
 55;Miami Heat;2018;106.3;MIA
 56;Miami Heat;2019;107.6;MIA
 57;Miami Heat;2020;109.5;MIA
 58;Miami Heat;2021;111.2;MIA
-59;Miami Heat;2022;108.3;MIA
+59;Miami Heat;2022;108.2;MIA
 60;Oklahoma City Thunder;2017;107.5;OKC
 61;Oklahoma City Thunder;2018;107.2;OKC
 62;Oklahoma City Thunder;2019;107.0;OKC
@@ -88,7 +88,7 @@
 86;Charlotte Hornets;2019;112.5;CHO
 87;Charlotte Hornets;2020;113.3;CHO
 88;Charlotte Hornets;2021;112.8;CHO
-89;Charlotte Hornets;2022;112.8;CHO
+89;Charlotte Hornets;2022;112.6;CHO
 90;Indiana Pacers;2017;108.8;IND
 91;Indiana Pacers;2018;108.1;IND
 92;Indiana Pacers;2019;106.5;IND
@@ -100,7 +100,7 @@
 98;Milwaukee Bucks;2019;105.2;MIL
 99;Milwaukee Bucks;2020;102.9;MIL
 100;Milwaukee Bucks;2021;111.4;MIL
-101;Milwaukee Bucks;2022;109.9;MIL
+101;Milwaukee Bucks;2022;110.1;MIL
 102;Portland Trail Blazers;2017;110.8;POR
 103;Portland Trail Blazers;2018;106.4;POR
 104;Portland Trail Blazers;2019;110.5;POR
@@ -130,13 +130,13 @@
 128;New Orleans Pelicans;2019;112.6;NOP
 129;New Orleans Pelicans;2020;111.9;NOP
 130;New Orleans Pelicans;2021;113.8;NOP
-131;New Orleans Pelicans;2022;112.5;NOP
+131;New Orleans Pelicans;2022;112.8;NOP
 132;Dallas Mavericks;2017;108.8;DAL
 133;Dallas Mavericks;2018;109.5;DAL
 134;Dallas Mavericks;2019;110.7;DAL
 135;Dallas Mavericks;2020;111.7;DAL
 136;Dallas Mavericks;2021;113.0;DAL
-137;Dallas Mavericks;2022;107.2;DAL
+137;Dallas Mavericks;2022;107.5;DAL
 138;New York Knicks;2017;111.5;NYK
 139;New York Knicks;2018;110.7;NYK
 140;New York Knicks;2019;113.7;NYK
@@ -160,13 +160,13 @@
 158;Philadelphia 76ers;2019;110.0;PHI
 159;Philadelphia 76ers;2020;109.0;PHI
 160;Philadelphia 76ers;2021;107.6;PHI
-161;Philadelphia 76ers;2022;109.5;PHI
+161;Philadelphia 76ers;2022;109.7;PHI
 162;Brooklyn Nets;2017;110.7;BRK
 163;Brooklyn Nets;2018;110.6;BRK
 164;Brooklyn Nets;2019;109.7;BRK
 165;Brooklyn Nets;2020;109.5;BRK
 166;Brooklyn Nets;2021;113.8;BRK
-167;Brooklyn Nets;2022;111.6;BRK
+167;Brooklyn Nets;2022;111.7;BRK
 168;Orlando Magic;2017;110.5;ORL
 169;Orlando Magic;2018;110.1;ORL
 170;Orlando Magic;2019;108.1;ORL
