@@ -4,7 +4,7 @@
 2;Golden State Warriors;2019;109.5;GSW
 3;Golden State Warriors;2020;113.8;GSW
 4;Golden State Warriors;2021;110.1;GSW
-5;Golden State Warriors;2022;106.7;GSW
+5;Golden State Warriors;2022;106.9;GSW
 6;San Antonio Spurs;2017;103.5;SAS
 7;San Antonio Spurs;2018;104.8;SAS
 8;San Antonio Spurs;2019;111.2;SAS
@@ -34,7 +34,7 @@
 32;Utah Jazz;2019;105.7;UTA
 33;Utah Jazz;2020;109.9;UTA
 34;Utah Jazz;2021;108.3;UTA
-35;Utah Jazz;2022;110.4;UTA
+35;Utah Jazz;2022;110.6;UTA
 36;Cleveland Cavaliers;2017;110.3;CLE
 37;Cleveland Cavaliers;2018;111.9;CLE
 38;Cleveland Cavaliers;2019;117.6;CLE
@@ -46,13 +46,13 @@
 44;Boston Celtics;2019;107.8;BOS
 45;Boston Celtics;2020;107.0;BOS
 46;Boston Celtics;2021;112.5;BOS
-47;Boston Celtics;2022;106.5;BOS
+47;Boston Celtics;2022;106.6;BOS
 48;Washington Wizards;2017;109.3;WAS
 49;Washington Wizards;2018;108.7;WAS
 50;Washington Wizards;2019;113.9;WAS
 51;Washington Wizards;2020;115.5;WAS
 52;Washington Wizards;2021;113.0;WAS
-53;Washington Wizards;2022;114.0;WAS
+53;Washington Wizards;2022;114.1;WAS
 54;Miami Heat;2017;106.7;MIA
 55;Miami Heat;2018;106.3;MIA
 56;Miami Heat;2019;107.6;MIA
@@ -88,7 +88,7 @@
 86;Charlotte Hornets;2019;112.5;CHO
 87;Charlotte Hornets;2020;113.3;CHO
 88;Charlotte Hornets;2021;112.8;CHO
-89;Charlotte Hornets;2022;113.2;CHO
+89;Charlotte Hornets;2022;113.1;CHO
 90;Indiana Pacers;2017;108.8;IND
 91;Indiana Pacers;2018;108.1;IND
 92;Indiana Pacers;2019;106.5;IND
@@ -124,19 +124,19 @@
 122;Minnesota Timberwolves;2019;112.9;MIN
 123;Minnesota Timberwolves;2020;112.2;MIN
 124;Minnesota Timberwolves;2021;115.0;MIN
-125;Minnesota Timberwolves;2022;110.6;MIN
+125;Minnesota Timberwolves;2022;110.9;MIN
 126;New Orleans Pelicans;2017;107.4;NOP
 127;New Orleans Pelicans;2018;108.3;NOP
 128;New Orleans Pelicans;2019;112.6;NOP
 129;New Orleans Pelicans;2020;111.9;NOP
 130;New Orleans Pelicans;2021;113.8;NOP
-131;New Orleans Pelicans;2022;112.4;NOP
+131;New Orleans Pelicans;2022;112.5;NOP
 132;Dallas Mavericks;2017;108.8;DAL
 133;Dallas Mavericks;2018;109.5;DAL
 134;Dallas Mavericks;2019;110.7;DAL
 135;Dallas Mavericks;2020;111.7;DAL
 136;Dallas Mavericks;2021;113.0;DAL
-137;Dallas Mavericks;2022;108.7;DAL
+137;Dallas Mavericks;2022;108.8;DAL
 138;New York Knicks;2017;111.5;NYK
 139;New York Knicks;2018;110.7;NYK
 140;New York Knicks;2019;113.7;NYK
@@ -178,4 +178,4 @@
 176;Los Angeles Lakers;2019;109.5;LAL
 177;Los Angeles Lakers;2020;106.3;LAL
 178;Los Angeles Lakers;2021;107.1;LAL
-179;Los Angeles Lakers;2022;112.4;LAL
+179;Los Angeles Lakers;2022;112.6;LAL
