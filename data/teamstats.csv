@@ -28,7 +28,7 @@
 26;Los Angeles Clippers;2019;111.5;LAC
 27;Los Angeles Clippers;2020;107.6;LAC
 28;Los Angeles Clippers;2021;111.2;LAC
-29;Los Angeles Clippers;2022;110.3;LAC
+29;Los Angeles Clippers;2022;110.5;LAC
 30;Utah Jazz;2017;105.3;UTA
 31;Utah Jazz;2018;103.9;UTA
 32;Utah Jazz;2019;105.7;UTA
@@ -40,7 +40,7 @@
 38;Cleveland Cavaliers;2019;117.6;CLE
 39;Cleveland Cavaliers;2020;115.4;CLE
 40;Cleveland Cavaliers;2021;114.4;CLE
-41;Cleveland Cavaliers;2022;108.8;CLE
+41;Cleveland Cavaliers;2022;109.2;CLE
 42;Boston Celtics;2017;108.4;BOS
 43;Boston Celtics;2018;103.9;BOS
 44;Boston Celtics;2019;107.8;BOS
@@ -82,7 +82,7 @@
 80;Chicago Bulls;2019;113.2;CHI
 81;Chicago Bulls;2020;109.8;CHI
 82;Chicago Bulls;2021;112.0;CHI
-83;Chicago Bulls;2022;112.6;CHI
+83;Chicago Bulls;2022;112.8;CHI
 84;Charlotte Hornets;2017;108.6;CHO
 85;Charlotte Hornets;2018;109.1;CHO
 86;Charlotte Hornets;2019;112.5;CHO
@@ -100,7 +100,7 @@
 98;Milwaukee Bucks;2019;105.2;MIL
 99;Milwaukee Bucks;2020;102.9;MIL
 100;Milwaukee Bucks;2021;111.4;MIL
-101;Milwaukee Bucks;2022;111.2;MIL
+101;Milwaukee Bucks;2022;111.1;MIL
 102;Portland Trail Blazers;2017;110.8;POR
 103;Portland Trail Blazers;2018;106.4;POR
 104;Portland Trail Blazers;2019;110.5;POR
@@ -112,13 +112,13 @@
 110;Atlanta Hawks;2019;113.9;ATL
 111;Atlanta Hawks;2020;114.8;ATL
 112;Atlanta Hawks;2021;113.3;ATL
-113;Atlanta Hawks;2022;115.0;ATL
+113;Atlanta Hawks;2022;114.9;ATL
 114;Detroit Pistons;2017;107.1;DET
 115;Detroit Pistons;2018;107.3;DET
 116;Detroit Pistons;2019;109.2;DET
 117;Detroit Pistons;2020;112.7;DET
 118;Detroit Pistons;2021;112.5;DET
-119;Detroit Pistons;2022;113.6;DET
+119;Detroit Pistons;2022;113.5;DET
 120;Minnesota Timberwolves;2017;112.0;MIN
 121;Minnesota Timberwolves;2018;111.1;MIN
 122;Minnesota Timberwolves;2019;112.9;MIN
@@ -166,7 +166,7 @@
 164;Brooklyn Nets;2019;109.7;BRK
 165;Brooklyn Nets;2020;109.5;BRK
 166;Brooklyn Nets;2021;113.8;BRK
-167;Brooklyn Nets;2022;113.0;BRK
+167;Brooklyn Nets;2022;112.9;BRK
 168;Orlando Magic;2017;110.5;ORL
 169;Orlando Magic;2018;110.1;ORL
 170;Orlando Magic;2019;108.1;ORL
@@ -178,4 +178,4 @@
 176;Los Angeles Lakers;2019;109.5;LAL
 177;Los Angeles Lakers;2020;106.3;LAL
 178;Los Angeles Lakers;2021;107.1;LAL
-179;Los Angeles Lakers;2022;112.9;LAL
+179;Los Angeles Lakers;2022;113.1;LAL
