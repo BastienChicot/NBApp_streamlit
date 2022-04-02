@@ -10,7 +10,7 @@
 8;San Antonio Spurs;2019;111.2;SAS
 9;San Antonio Spurs;2020;113.5;SAS
 10;San Antonio Spurs;2021;112.8;SAS
-11;San Antonio Spurs;2022;112.5;SAS
+11;San Antonio Spurs;2022;112.4;SAS
 12;Houston Rockets;2017;109.0;HOU
 13;Houston Rockets;2018;106.1;HOU
 14;Houston Rockets;2019;110.7;HOU
@@ -22,13 +22,13 @@
 20;Toronto Raptors;2019;107.1;TOR
 21;Toronto Raptors;2020;105.0;TOR
 22;Toronto Raptors;2021;112.5;TOR
-23;Toronto Raptors;2022;110.5;TOR
+23;Toronto Raptors;2022;110.3;TOR
 24;Los Angeles Clippers;2017;108.2;LAC
 25;Los Angeles Clippers;2018;110.2;LAC
 26;Los Angeles Clippers;2019;111.5;LAC
 27;Los Angeles Clippers;2020;107.6;LAC
 28;Los Angeles Clippers;2021;111.2;LAC
-29;Los Angeles Clippers;2022;110.5;LAC
+29;Los Angeles Clippers;2022;110.6;LAC
 30;Utah Jazz;2017;105.3;UTA
 31;Utah Jazz;2018;103.9;UTA
 32;Utah Jazz;2019;105.7;UTA
@@ -46,13 +46,13 @@
 44;Boston Celtics;2019;107.8;BOS
 45;Boston Celtics;2020;107.0;BOS
 46;Boston Celtics;2021;112.5;BOS
-47;Boston Celtics;2022;106.6;BOS
+47;Boston Celtics;2022;106.8;BOS
 48;Washington Wizards;2017;109.3;WAS
 49;Washington Wizards;2018;108.7;WAS
 50;Washington Wizards;2019;113.9;WAS
 51;Washington Wizards;2020;115.5;WAS
 52;Washington Wizards;2021;113.0;WAS
-53;Washington Wizards;2022;114.0;WAS
+53;Washington Wizards;2022;113.9;WAS
 54;Miami Heat;2017;106.7;MIA
 55;Miami Heat;2018;106.3;MIA
 56;Miami Heat;2019;107.6;MIA
@@ -76,7 +76,7 @@
 74;Denver Nuggets;2019;108.9;DEN
 75;Denver Nuggets;2020;111.0;DEN
 76;Denver Nuggets;2021;112.1;DEN
-77;Denver Nuggets;2022;111.6;DEN
+77;Denver Nuggets;2022;111.9;DEN
 78;Chicago Bulls;2017;107.0;CHI
 79;Chicago Bulls;2018;110.9;CHI
 80;Chicago Bulls;2019;113.2;CHI
@@ -94,19 +94,19 @@
 92;Indiana Pacers;2019;106.5;IND
 93;Indiana Pacers;2020;108.0;IND
 94;Indiana Pacers;2021;112.4;IND
-95;Indiana Pacers;2022;115.4;IND
+95;Indiana Pacers;2022;115.6;IND
 96;Milwaukee Bucks;2017;109.3;MIL
 97;Milwaukee Bucks;2018;110.1;MIL
 98;Milwaukee Bucks;2019;105.2;MIL
 99;Milwaukee Bucks;2020;102.9;MIL
 100;Milwaukee Bucks;2021;111.4;MIL
-101;Milwaukee Bucks;2022;111.1;MIL
+101;Milwaukee Bucks;2022;111.6;MIL
 102;Portland Trail Blazers;2017;110.8;POR
 103;Portland Trail Blazers;2018;106.4;POR
 104;Portland Trail Blazers;2019;110.5;POR
 105;Portland Trail Blazers;2020;114.8;POR
 106;Portland Trail Blazers;2021;116.0;POR
-107;Portland Trail Blazers;2022;116.4;POR
+107;Portland Trail Blazers;2022;116.6;POR
 108;Atlanta Hawks;2017;105.7;ATL
 109;Atlanta Hawks;2018;110.6;ATL
 110;Atlanta Hawks;2019;113.9;ATL
@@ -118,13 +118,13 @@
 116;Detroit Pistons;2019;109.2;DET
 117;Detroit Pistons;2020;112.7;DET
 118;Detroit Pistons;2021;112.5;DET
-119;Detroit Pistons;2022;113.5;DET
+119;Detroit Pistons;2022;113.3;DET
 120;Minnesota Timberwolves;2017;112.0;MIN
 121;Minnesota Timberwolves;2018;111.1;MIN
 122;Minnesota Timberwolves;2019;112.9;MIN
 123;Minnesota Timberwolves;2020;112.2;MIN
 124;Minnesota Timberwolves;2021;115.0;MIN
-125;Minnesota Timberwolves;2022;111.0;MIN
+125;Minnesota Timberwolves;2022;111.2;MIN
 126;New Orleans Pelicans;2017;107.4;NOP
 127;New Orleans Pelicans;2018;108.3;NOP
 128;New Orleans Pelicans;2019;112.6;NOP
@@ -136,7 +136,7 @@
 134;Dallas Mavericks;2019;110.7;DAL
 135;Dallas Mavericks;2020;111.7;DAL
 136;Dallas Mavericks;2021;113.0;DAL
-137;Dallas Mavericks;2022;109.0;DAL
+137;Dallas Mavericks;2022;109.4;DAL
 138;New York Knicks;2017;111.5;NYK
 139;New York Knicks;2018;110.7;NYK
 140;New York Knicks;2019;113.7;NYK
@@ -154,7 +154,7 @@
 152;Phoenix Suns;2019;115.1;PHO
 153;Phoenix Suns;2020;111.4;PHO
 154;Phoenix Suns;2021;111.3;PHO
-155;Phoenix Suns;2022;107.0;PHO
+155;Phoenix Suns;2022;107.1;PHO
 156;Philadelphia 76ers;2017;108.9;PHI
 157;Philadelphia 76ers;2018;105.0;PHI
 158;Philadelphia 76ers;2019;110.0;PHI
@@ -172,10 +172,10 @@
 170;Orlando Magic;2019;108.1;ORL
 171;Orlando Magic;2020;109.5;ORL
 172;Orlando Magic;2021;114.5;ORL
-173;Orlando Magic;2022;112.3;ORL
+173;Orlando Magic;2022;112.2;ORL
 174;Los Angeles Lakers;2017;113.0;LAL
 175;Los Angeles Lakers;2018;108.0;LAL
 176;Los Angeles Lakers;2019;109.5;LAL
 177;Los Angeles Lakers;2020;106.3;LAL
 178;Los Angeles Lakers;2021;107.1;LAL
-179;Los Angeles Lakers;2022;113.1;LAL
+179;Los Angeles Lakers;2022;113.0;LAL
